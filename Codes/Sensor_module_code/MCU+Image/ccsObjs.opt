@@ -1,0 +1,8 @@
+"./adcsinglechannel.o"
+"./syscfg/ti_drivers_config.o"
+"./main_tirtos.o"
+"../cc32xxsf_tirtos.cmd"
+-lti_utils_build_linker.cmd.genlibs
+-l"D:/344/workspace_v12/tirtos_builds_cc32xx_release_ticlang/Debug/configPkg/linker.cmd"
+-l"ti/devices/cc32xx/driverlib/ticlang/Release/driverlib.a"
+-llibc.a

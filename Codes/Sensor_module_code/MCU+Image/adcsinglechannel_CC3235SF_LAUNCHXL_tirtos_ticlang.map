@@ -1,0 +1,2210 @@
+******************************************************************************
+            TI ARM Clang Linker PC v2.1.2                      
+******************************************************************************
+>> Linked Mon Mar 27 01:22:59 2023
+
+OUTPUT FILE NAME:   <adcsinglechannel_CC3235SF_LAUNCHXL_tirtos_ticlang.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 010060f1
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH_HDR             01000000   000007ff  00000000  000007ff  R  X
+  FLASH                 01000800   000ff800  000071b5  000f864b  R  X
+  SRAM                  20000000   00040000  00009fe1  0003601f  RW X
+  LOG_DATA              90000000   00040000  00000000  00040000  R   
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+01000800    01000800    000071c0   000071c0    r-x
+  01000800    01000800    0000030c   0000030c    r-- .resetVecs
+  01000b10    01000b10    000063a4   000063a4    r-x .text
+  01006eb8    01006eb8    000004b8   000004b8    r-- .rodata
+  01007370    01007370    000003f1   000003f1    r-- .const
+  01007764    01007764    0000025c   0000025c    r-- .cinit
+20000000    20000000    0000030c   00000000    rw-
+  20000000    20000000    0000030c   00000000    rw- .vecs
+20000310    20000310    00008000   00000000    r--
+  20000310    20000310    00008000   00000000    r-- .priheap
+20008400    20008400    000018d5   00000000    rw-
+  20008400    20008400    0000121c   00000000    rw- .bss
+  2000961c    2000961c    000006b9   00000000    rw- .data
+2003fc00    2003fc00    00000400   00000000    rw-
+  2003fc00    2003fc00    00000400   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.resetVecs 
+*          0    01000800    0000030c     
+                  01000800    0000030c     release_pm4.om4 (.resetVecs)
+
+.text      0    01000b10    000063a4     
+                  01000b10    000004b8     driverlib.a : prcm.obj (.text.PRCMCC3200MCUInit)
+                  01000fc8    00000410     drivers_cc32xx.a : PowerCC32XX.om4 (.text.Power_sleep)
+                  010013d8    000002e0     sysbios.am4 : runtime_System.o (.text.xdc_runtime_System_doPrint__I)
+                  010016b8    000002c6     drivers_cc32xx.a : UART2.om4 (.text.UART2_writeTimeout)
+                  0100197e    00000290                      : UART2CC32XX.om4 (.text.UART2CC32XX_hwiIntFxn)
+                  01001c0e    00000002     ti_drivers_config.o (.text.Board_initHook)
+                  01001c10    00000244     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2_open)
+                  01001e54    000001b6     libclang_rt.builtins.a : adddf3.S.obj (.text)
+                  0100200a    00000002     display_cc32xx.a : DisplayUart2.om4 (.text.DisplayUart2Min_clear)
+                  0100200c    00000160     release_pm4.om4 (.text.xdc_runtime_System_printfExtend__I)
+                  0100216c    0000015c     drivers_cc32xx.a : GPIOCC32XX.om4 (.text.GPIO_setConfig)
+                  010022c8    0000012c     dpl_cc32xx.a : PowerCC32XX_tirtos.om4 (.text.PowerCC32XX_sleepPolicy)
+                  010023f4    000000fc     libclang_rt.builtins.a : muldf3.S.obj (.text)
+                  010024f0    000000f8     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2_close)
+                  010025e8    000000f0     sysbios.am4 : tirtos_pthread.o (.text.pthread_create)
+                  010026d8    000000ec                 : knl_Task.o (.text.ti_sysbios_knl_Task_Instance_finalize__E)
+                  010027c4    000000e8                 : m3_Hwi_asm_gnu.obj (.text.ti_sysbios_family_arm_m3_Hwi_dispatch__I)
+                  010028ac    000000dc     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2CC32XX_initHw)
+                  01002988    000000dc     sysbios.am4 : knl_Task.o (.text.ti_sysbios_knl_Task_Instance_init__E)
+                  01002a64    000000dc                 : knl_Task.o (.text.ti_sysbios_knl_Task_postInit__I)
+                  01002b40    000000cc                 : knl_Semaphore.o (.text.ti_sysbios_knl_Semaphore_pend__E)
+                  01002c0c    000000bc     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2Support_dmaStartRx)
+                  01002cc8    000000bc     sysbios.am4 : knl_Task.o (.text.ti_sysbios_knl_Task_setPri__E)
+                  01002d84    000000b8     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2Support_dmaStartTx)
+                  01002e3c    000000b8     sysbios.am4 : runtime_Startup.o (.text.xdc_runtime_Startup_startMods__I)
+                  01002ef4    000000b0     libclang_rt.builtins.a : udivmoddi4.S.obj (.text)
+                  01002fa4    000000ac     adcsinglechannel.o (.text.threadFxn1)
+                  01003050    000000a2     driverlib.a : pin.obj (.text.PinConfigSet)
+                  010030f2    0000000e     drivers_cc32xx.a : UART2.om4 (.text.UART2_write)
+                  01003100    00000096                      : PowerCC32XX_asm.om4 (.text)
+                  01003196    00000002     display_cc32xx.a : DisplayUart2.om4 (.text.DisplayUart2Min_clearLines)
+                  01003198    00000094     drivers_cc32xx.a : PowerCC32XX.om4 (.text.PowerCC32XX_configureWakeup)
+                  0100322c    00000094     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_Instance_init__E)
+                  010032c0    00000092     driverlib.a : udma.obj (.text.uDMAChannelAttributeDisable)
+                  01003352    00000002     display_cc32xx.a : DisplayUart2.om4 (.text.DisplayUart2Min_init)
+                  01003354    00000090     adcsinglechannel.o (.text.mainThread)
+                  010033e4    0000008e     driverlib.a : prcm.obj (.text.PRCMSysResetCauseGet)
+                  01003472    00000002     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2CC32XX_eventCallback)
+                  01003474    00000088     sysbios.am4 : knl_Clock.o (.text.ti_sysbios_knl_Clock_workFunc__E)
+                  010034fc    00000084     drivers_cc32xx.a : ADCCC32XX.om4 (.text.ADCCC32XX_open)
+                  01003580    00000084                      : GPIOCC32XX.om4 (.text.GPIO_init)
+                  01003604    00000084     sysbios.am4 : tirtos_pthread_key.o (.text._pthread_removeThreadKeys)
+                  01003688    00000080     drivers_cc32xx.a : UDMACC32XX.om4 (.text.UDMACC32XX_open)
+                  01003708    00000080     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_initNVIC__E)
+                  01003788    00000078     drivers_cc32xx.a : PowerCC32XX.om4 (.text.Power_init)
+                  01003800    00000078     sysbios.am4 : knl_Swi.o (.text.ti_sysbios_knl_Swi_restoreHwi__E)
+                  01003878    00000074     drivers_cc32xx.a : PowerCC32XX.om4 (.text.Power_setDependency)
+                  010038ec    00000074     sysbios.am4 : knl_Task.o (.text.ti_sysbios_knl_Task_Module_startup__E)
+                  01003960    00000070     drivers_cc32xx.a : ADCCC32XX.om4 (.text.ADCCC32XX_close)
+                  010039d0    00000070     sysbios.am4 : runtime_Memory.o (.text.xdc_runtime_Memory_alloc__E)
+                  01003a40    00000070                 : runtime_System.o (.text.xdc_runtime_System_formatNum__I)
+                  01003ab0    0000006e     libclang_rt.builtins.a : comparedf2.c.obj (.text.__gedf2)
+                  01003b1e    00000002                            : aeabi_div0.c.obj (.text.__aeabi_ldiv0)
+                  01003b20    0000006e                            : comparedf2.c.obj (.text.__ledf2)
+                  01003b8e    00000002     libc.a : _lock.c.obj (.text._nop)
+                  01003b90    0000006c     drivers_cc32xx.a : GPIOCC32XX.om4 (.text.powerNotifyFxn)
+                  01003bfc    0000006c     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_postInit__I)
+                  01003c68    0000006c                 : knl_Swi.o (.text.ti_sysbios_knl_Swi_run__I)
+                  01003cd4    0000006c                 : knl_Task.o (.text.ti_sysbios_knl_Task_exit__E)
+                  01003d40    0000006c                 : knl_Task.o (.text.ti_sysbios_knl_Task_startCore__E)
+                  01003dac    0000006a     driverlib.a : prcm.obj (.text.PRCMPeripheralReset)
+                  01003e16    0000006a     libc.a : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  01003e80    00000068     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_dispatchC__I)
+                  01003ee8    00000068                 : knl_Task.o (.text.ti_sysbios_knl_Task_allBlockedFunction__I)
+                  01003f50    00000066     release_pm4.om4 (.text.memalign)
+                  01003fb6    00000066     sysbios.am4 : runtime_Core-mem.o (.text.xdc_runtime_Core_createObject__I)
+                  0100401c    00000064                 : heaps_HeapMem.o (.text.ti_sysbios_heaps_HeapMem_initPrimary__I)
+                  01004080    00000064                 : knl_Semaphore.o (.text.ti_sysbios_knl_Semaphore_post__E)
+                  010040e4    00000062     libclang_rt.builtins.a : aeabi_dcmp.S.obj (.text)
+                  01004146    00000002     sysbios.am4 : _BIOS.o (.text.ti_sysbios_BIOS_linkedWithIncorrectBootLibrary__E)
+                  01004148    00000060     adcsinglechannel.o (.text.threadFxn0)
+                  010041a8    00000060     sysbios.am4 : heaps_HeapMem.o (.text.ti_sysbios_heaps_HeapMem_allocUnprotected__E)
+                  01004208    0000005c     driverlib.a : flash.obj (.text.FlashDisable)
+                  01004264    0000005c     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2Support_dmaStopTx)
+                  010042c0    0000005c     sysbios.am4 : tirtos_pthread.o (.text.pthread_exit)
+                  0100431c    0000005a     driverlib.a : prcm.obj (.text.PRCMPeripheralClkEnable)
+                  01004376    0000005a     sysbios.am4 : runtime_Core-mem.o (.text.xdc_runtime_Core_deleteObject__I)
+                  010043d0    00000058     drivers_cc32xx.a : GPIOCC32XX.om4 (.text.GPIO_hwiIntFxn)
+                  01004428    00000058                      : GPIOCC32XX.om4 (.text.GPIO_setInterruptConfig)
+                  01004480    00000058                      : PowerCC32XX.om4 (.text.Power_releaseDependency)
+                  010044d8    00000058     main_tirtos.o (.text.main)
+                  01004530    00000058     sysbios.am4 : heaps_HeapMem.o (.text.ti_sysbios_heaps_HeapMem_alloc__E)
+                  01004588    00000056     driverlib.a : prcm.obj (.text.PRCMLPDSEnter)
+                  010045de    00000002     release_pm4.om4 (.text.ti_sysbios_BIOS_nullFunc__I)
+                  010045e0    00000054     drivers_cc32xx.a : ADCCC32XX.om4 (.text.ADCCC32XX_convert)
+                  01004634    00000054                      : PowerCC32XX.om4 (.text.PowerCC32XX_setParkState)
+                  01004688    00000054     release_pm4.om4 (.text.ti_sysbios_family_arm_m3_Hwi_construct)
+                  010046dc    00000054     release_pm4.om4 (.text.ti_sysbios_family_arm_m3_Hwi_create)
+                  01004730    00000054     sysbios.am4 : knl_Swi.o (.text.ti_sysbios_knl_Swi_runLoop__I)
+                  01004784    00000054                 : knl_Swi.o (.text.ti_sysbios_knl_Swi_schedule__I)
+                  010047d8    00000052     display_cc32xx.a : DisplayUart2.om4 (.text.DisplayUart2Min_vprintf)
+                  0100482a    00000002     sysbios.am4 : gates_GateHwi.o (.text.ti_sysbios_gates_GateHwi_Instance_init__E)
+                  0100482c    00000050     display_cc32xx.a : Display.om4 (.text.Display_doOpen)
+                  0100487c    00000050     sysbios.am4 : knl_Clock.o (.text.ti_sysbios_knl_Clock_walkQueuePeriodic__E)
+                  010048cc    00000050                 : runtime_Startup.o (.text.xdc_runtime_Startup_exec__E)
+                  0100491c    0000004e                 : heaps_HeapMem.o (.text.ti_sysbios_heaps_HeapMem_freeUnprotected__E)
+                  0100496a    0000004c     driverlib.a : prcm.obj (.text.PRCMLPDSRestoreInfoSet)
+                  010049b6    00000002     sysbios.am4 : knl_Clock.o (.text.ti_sysbios_knl_Clock_logTick__E)
+                  010049b8    0000004c                 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_Module_startup__E)
+                  01004a04    0000004c                 : m3_TaskSupport_asm_gnu.obj (.text.ti_sysbios_family_arm_m3_TaskSupport_buildTaskStack)
+                  01004a50    0000004c                 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_setPeriod__E)
+                  01004a9c    0000004c     release_pm4.om4 (.text.ti_sysbios_knl_Task_create)
+                  01004ae8    0000004c     sysbios.am4 : knl_Task.o (.text.ti_sysbios_knl_Task_schedule__I)
+                  01004b34    0000004a     drivers_cc32xx.a : PowerCC32XX.om4 (.text.PowerCC32XX_parkPin)
+                  01004b7e    0000004a     dpl_cc32xx.a : PowerCC32XX_tirtos.om4 (.text.getCountsRTC)
+                  01004bc8    00000048     drivers_cc32xx.a : GPIOCC32XX.om4 (.text.GPIO_disableInt)
+                  01004c10    00000048                      : GPIOCC32XX.om4 (.text.GPIO_enableInt)
+                  01004c58    00000048                      : UART2CC32XX.om4 (.text.UART2Support_dmaStopRx)
+                  01004ca0    00000048     release_pm4.om4 (.text.realloc)
+                  01004ce8    00000048     sysbios.am4 : m3_Hwi_asm_switch_gnu.obj (.text.ti_sysbios_family_arm_m3_Hwi_initStacks__E)
+                  01004d30    00000048                 : knl_Swi.o (.text.ti_sysbios_knl_Swi_post__E)
+                  01004d78    00000048     libclang_rt.builtins.a : fixdfsi.S.obj (.text)
+                  01004dc0    00000046     dpl_cc32xx.a : ClockP_tirtos.om4 (.text.ClockP_construct)
+                  01004e06    00000046     driverlib.a : prcm.obj (.text.PRCMLPDSEnterKeepDebugIf)
+                  01004e4c    00000046     drivers_cc32xx.a : RingBuf.om4 (.text.RingBuf_put)
+                  01004e92    00000046     sysbios.am4 : runtime_Core-smem.o (.text.xdc_runtime_Core_constructObject__I)
+                  01004ed8    00000044     drivers_cc32xx.a : ADC.om4 (.text.ADC_init)
+                  01004f1c    00000044                      : PowerCC32XX.om4 (.text.Power_releaseConstraint)
+                  01004f60    00000044     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_Instance_finalize__E)
+                  01004fa4    00000044                 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_disableInterrupt__E)
+                  01004fe8    00000044                 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_enableInterrupt__E)
+                  0100502c    00000044                 : heaps_HeapMem.o (.text.ti_sysbios_heaps_HeapMem_Instance_init__E)
+                  01005070    00000044                 : heaps_HeapMem.o (.text.ti_sysbios_heaps_HeapMem_getStats__E)
+                  010050b4    00000044                 : knl_Mailbox.o (.text.ti_sysbios_knl_Mailbox_Module_startup__E)
+                  010050f8    00000044     libclang_rt.builtins.a : fixunsdfsi.S.obj (.text)
+                  0100513c    00000042     dpl_cc32xx.a : HwiP_tirtos.om4 (.text.HwiP_construct)
+                  0100517e    00000042     driverlib.a : pin.obj (.text.PinModeSet)
+                  010051c0    00000040     drivers_cc32xx.a : ADC.om4 (.text.ADC_open)
+                  01005200    00000040     dpl_cc32xx.a : HwiP_tirtos.om4 (.text.HwiP_create)
+                  01005240    00000040     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_construct2__E)
+                  01005280    00000040                 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_start__E)
+                  010052c0    00000040                 : runtime_Core-params.o (.text.xdc_runtime_Core_assignParams__I)
+                  01005300    0000003c     display_cc32xx.a : DisplayUart2.om4 (.text.DisplayUart2Min_open)
+                  0100533c    0000003c     drivers_cc32xx.a : UART2.om4 (.text.UART2_rxDisable)
+                  01005378    0000003c                      : UDMACC32XX.om4 (.text.UDMACC32XX_init)
+                  010053b4    0000003c     sysbios.am4 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_setPeriodMicroSecs__E)
+                  010053f0    0000003c                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_Instance_init__E)
+                  0100542c    0000003c                 : knl_Task.o (.text.ti_sysbios_knl_Task_blockI__E)
+                  01005468    0000003c                 : knl_Task.o (.text.ti_sysbios_knl_Task_restore__E)
+                  010054a4    00000038     drivers_cc32xx.a : PowerCC32XX.om4 (.text.Power_setConstraint)
+                  010054dc    00000038                      : RingBuf.om4 (.text.RingBuf_putAdvance)
+                  01005514    00000038                      : UDMACC32XX.om4 (.text.UDMACC32XX_close)
+                  0100554c    00000038     sysbios.am4 : knl_Swi.o (.text.ti_sysbios_knl_Swi_restore__E)
+                  01005584    00000038                 : knl_Task.o (.text.ti_sysbios_knl_Task_unblockI__E)
+                  010055bc    00000038     release_pm4.om4 (.text.ti_sysbios_rts_MemAlloc_alloc)
+                  010055f4    00000038     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  0100562c    00000038     libclang_rt.builtins.a : extendsfdf2.S.obj (.text)
+                  01005664    00000036     dpl_cc32xx.a : SemaphoreP_tirtos.om4 (.text.SemaphoreP_construct)
+                  0100569a    00000034     driverlib.a : pin.obj (.text.PinModeGet)
+                  010056ce    00000002     release_pm4.om4 (.text.xdc_runtime_Startup_reset__I)
+                  010056d0    00000034     release_pm4.om4 (.text.ti_sysbios_BIOS_atExitFunc__I)
+                  01005704    00000034     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_getStackInfo__E)
+                  01005738    00000034                 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_initDevice__I)
+                  0100576c    00000034                 : knl_Mailbox.o (.text.ti_sysbios_knl_Mailbox_postInit__I)
+                  010057a0    00000034                 : runtime_System.o (.text.xdc_runtime_System_atexit__E)
+                  010057d4    00000030     drivers_cc32xx.a : PowerCC32XX.om4 (.text.notify)
+                  01005804    00000030     release_pm4.om4 (.text.ti_sysbios_BIOS_startFunc__I)
+                  01005834    00000030     sysbios.am4 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_periodicStub__I)
+                  01005864    00000030     release_pm4.om4 (.text.ti_sysbios_gates_GateHwi_Object__create__S)
+                  01005894    00000030     release_pm4.om4 (.text.ti_sysbios_gates_GateMutex_Object__create__S)
+                  010058c4    00000030     sysbios.am4 : gates_GateMutex.o (.text.ti_sysbios_gates_GateMutex_enter__E)
+                  010058f4    00000030     release_pm4.om4 (.text.ti_sysbios_heaps_HeapMem_Object__create__S)
+                  01005924    00000030     sysbios.am4 : heaps_HeapMem.o (.text.ti_sysbios_heaps_HeapMem_free__E)
+                  01005954    00000030     release_pm4.om4 (.text.ti_sysbios_knl_Clock_construct)
+                  01005984    00000030     release_pm4.om4 (.text.ti_sysbios_knl_Clock_doTick__I)
+                  010059b4    00000030     release_pm4.om4 (.text.ti_sysbios_knl_Semaphore_construct)
+                  010059e4    00000030     release_pm4.om4 (.text.ti_sysbios_knl_Semaphore_create)
+                  01005a14    00000030     sysbios.am4 : knl_Task.o (.text.ti_sysbios_knl_Task_processVitalTaskFlag__I)
+                  01005a44    00000030                 : runtime_System.o (.text.xdc_runtime_System_processAtExit__E)
+                  01005a74    00000030                 : runtime_System.o (.text.xdc_runtime_System_putchar__I)
+                  01005aa4    0000002e     drivers_cc32xx.a : PowerCC32XX.om4 (.text.PowerCC32XX_restoreParkedPin)
+                  01005ad2    0000002e                      : RingBuf.om4 (.text.RingBuf_getConsume)
+                  01005b00    0000002e                      : RingBuf.om4 (.text.RingBuf_putPointer)
+                  01005b2e    0000002e                      : UART2CC32XX.om4 (.text.UART2CC32XX_getRxData)
+                  01005b5c    0000002e                      : UART2CC32XX.om4 (.text.UART2Support_sendData)
+                  01005b8a    0000002e     driverlib.a : uart.obj (.text.UARTDisable)
+                  01005bb8    0000002c     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2Support_disableRx)
+                  01005be4    0000002c     sysbios.am4 : tirtos_pthread.o (.text._pthread_cleanupFxn)
+                  01005c10    0000002c                 : tirtos_pthread.o (.text._pthread_delete)
+                  01005c3c    0000002c                 : m3_TaskSupport.o (.text.ti_sysbios_family_arm_m3_TaskSupport_start__E)
+                  01005c68    0000002c                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_addI__E)
+                  01005c94    0000002c     release_pm4.om4 (.text.ti_sysbios_knl_Queue_construct)
+                  01005cc0    0000002c     sysbios.am4 : knl_Semaphore.o (.text.ti_sysbios_knl_Semaphore_pendTimeout__I)
+                  01005cec    0000002a     driverlib.a : prcm.obj (.text.PRCMPeripheralClkDisable)
+                  01005d16    0000002a     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2CC32XX_writeTimeout)
+                  01005d40    00000028                      : List.om4 (.text.List_remove)
+                  01005d68    00000028                      : PowerCC32XX.om4 (.text.PowerCC32XX_getParkState)
+                  01005d90    00000028     dpl_cc32xx.a : PowerCC32XX_tirtos.om4 (.text.PowerCC32XX_initPolicy)
+                  01005db8    00000028     drivers_cc32xx.a : PowerCC32XX.om4 (.text.PowerCC32XX_reset)
+                  01005de0    00000028     dpl_cc32xx.a : SemaphoreP_tirtos.om4 (.text.SemaphoreP_createBinary)
+                  01005e08    00000028     release_pm4.om4 (.text.calloc)
+                  01005e30    00000028     release_pm4.om4 (.text.ti_sysbios_BIOS_registerRTSLock__I)
+                  01005e58    00000028     sysbios.am4 : m3_Hwi_asm_gnu.obj (.text.ti_sysbios_family_arm_m3_Hwi_excHandlerAsm__I)
+                  01005e80    00000028                 : m3_TimestampProvider.o (.text.ti_sysbios_family_arm_m3_TimestampProvider_Module_startup__E)
+                  01005ea8    00000028                 : knl_Task.o (.text.ti_sysbios_knl_Task_restoreHwi__E)
+                  01005ed0    00000026     dpl_cc32xx.a : SemaphoreP_tirtos.om4 (.text.SemaphoreP_constructBinary)
+                  01005ef6    00000002     sysbios.am4 : runtime_SysCallback.o (.text.xdc_runtime_SysCallback_defaultAbort)
+                  01005ef8    00000024     display_cc32xx.a : Display.om4 (.text.Display_doInit)
+                  01005f1c    00000024     drivers_cc32xx.a : List.om4 (.text.List_put)
+                  01005f40    00000024                      : PowerCC32XX.om4 (.text.PowerCC32XX_restoreParkState)
+                  01005f64    00000024                      : PowerCC32XX.om4 (.text.Power_registerNotify)
+                  01005f88    00000024     release_pm4.om4 (.text.ti_sysbios_BIOS_removeRTSLock__I)
+                  01005fac    00000024     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_clearInterrupt__E)
+                  01005fd0    00000024                 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_postInit__I)
+                  01005ff4    00000024                 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_startup__E)
+                  01006018    00000024     release_pm4.om4 (.text.ti_sysbios_gates_GateMutex_Object__delete__S)
+                  0100603c    00000024     sysbios.am4 : knl_Clock.o (.text.ti_sysbios_knl_Clock_start__E)
+                  01006060    00000024                 : knl_Semaphore.o (.text.ti_sysbios_knl_Semaphore_Instance_init__E)
+                  01006084    00000024     release_pm4.om4 (.text.ti_sysbios_knl_Semaphore_Object__delete__S)
+                  010060a8    00000024     sysbios.am4 : knl_Swi.o (.text.ti_sysbios_knl_Swi_Module_startup__E)
+                  010060cc    00000024                 : knl_Task.o (.text.ti_sysbios_knl_Task_enter__I)
+                  010060f0    00000024     startup.am4 : boot_cortex_m.om4 (.text:_c_int00)
+                  01006114    00000022     drivers_cc32xx.a : RingBuf.om4 (.text.RingBuf_getPointer)
+                  01006136    00000002     sysbios.am4 : runtime_SysCallback.o (.text.xdc_runtime_SysCallback_defaultExit)
+                  01006138    00000020     drivers_cc32xx.a : ADCCC32XX.om4 (.text.ADCCC32XX_convertToMicroVolts)
+                  01006158    00000020                      : PowerCC32XX.om4 (.text.Power_unregisterNotify)
+                  01006178    00000020     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_setPriority__E)
+                  01006198    00000020                 : m3_TaskSupport_asm_gnu.obj (.text.ti_sysbios_family_arm_m3_TaskSupport_swap__E)
+                  010061b8    00000020     release_pm4.om4 (.text.ti_sysbios_gates_GateHwi_Object__delete__S)
+                  010061d8    00000020     sysbios.am4 : hal_Hwi_stack.o (.text.ti_sysbios_hal_Hwi_initStack)
+                  010061f8    00000020     release_pm4.om4 (.text.ti_sysbios_heaps_HeapMem_Object__delete__S)
+                  01006218    00000020     sysbios.am4 : knl_Clock.o (.text.ti_sysbios_knl_Clock_Module_startup__E)
+                  01006238    00000020     release_pm4.om4 (.text.ti_sysbios_knl_Clock_destruct)
+                  01006258    00000020     sysbios.am4 : knl_Idle.o (.text.ti_sysbios_knl_Idle_run__E)
+                  01006278    00000020     release_pm4.om4 (.text.ti_sysbios_knl_Semaphore_destruct)
+                  01006298    00000020     release_pm4.om4 (.text.ti_sysbios_knl_Task_Object__delete__S)
+                  010062b8    00000020     sysbios.am4 : runtime_Error.o (.text.xdc_runtime_Error_policyMin__E)
+                  010062d8    00000020                 : runtime_Error.o (.text.xdc_runtime_Error_raiseX__E)
+                  010062f8    00000020     startup.am4 : boot_cortex_m.om4 (.text:_c_int00_noargs)
+                  01006318    00000020     libclang_rt.builtins.a : floatunsidf.S.obj (.text)
+                  01006338    0000001e     driverlib.a : uart.obj (.text.UARTEnable)
+                  01006356    0000001e     sysbios.am4 : m3_Hwi_asm_switch_gnu.obj (.text.ti_sysbios_family_xxx_Hwi_switchAndRunFunc)
+                  01006374    0000001e     driverlib.a : udma.obj (.text.uDMAChannelIsEnabled)
+                  01006392    0000001e     sysbios.am4 : runtime_Memory.o (.text.xdc_runtime_Memory_valloc__E)
+                  010063b0    0000001c     drivers_cc32xx.a : ADCCC32XX.om4 (.text.ADCCC32XX_convertChain)
+                  010063cc    0000001c     sysbios.am4 : tirtos_pthread.o (.text.pthread_attr_init)
+                  010063e8    0000001c     release_pm4.om4 (.text.ti_sysbios_BIOS_rtsLock__I)
+                  01006404    0000001c     release_pm4.om4 (.text.ti_sysbios_family_arm_m3_Hwi_Object__get__S)
+                  01006420    0000001c     release_pm4.om4 (.text.ti_sysbios_family_arm_m3_Hwi_destruct)
+                  0100643c    0000001c     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_excHandler__I)
+                  01006458    0000001c                 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_Module_startup__E)
+                  01006474    0000001c                 : gates_GateMutex.o (.text.ti_sysbios_gates_GateMutex_Instance_init__E)
+                  01006490    0000001c     release_pm4.om4 (.text.ti_sysbios_heaps_HeapMem_Object__get__S)
+                  010064ac    0000001c     release_pm4.om4 (.text.ti_sysbios_knl_Queue_destruct)
+                  010064c8    0000001c     sysbios.am4 : knl_Queue.o (.text.ti_sysbios_knl_Queue_put__E)
+                  010064e4    0000001c     release_pm4.om4 (.text.ti_sysbios_knl_Swi_Object__get__S)
+                  01006500    0000001c     release_pm4.om4 (.text.ti_sysbios_knl_Task_Object__get__S)
+                  0100651c    0000001c     sysbios.am4 : runtime_Error.o (.text.xdc_runtime_Error_check__E)
+                  01006538    0000001c                 : runtime_System.o (.text.xdc_runtime_System_abort__E)
+                  01006554    0000001c     startup.am4 : boot_cortex_m.om4 (.text:_c_int00_noinit)
+                  01006570    0000001c                 : boot_cortex_m.om4 (.text:_c_int00_noinit_noargs)
+                  0100658c    0000001a     driverlib.a : prcm.obj (.text.PRCMHIBRegRead)
+                  010065a6    0000001a                 : prcm.obj (.text.PRCMHIBRegWrite)
+                  010065c0    0000001a                 : pin.obj (.text.PinToPadGet)
+                  010065da    0000001a     drivers_cc32xx.a : UDMACC32XX.om4 (.text.postNotifyFxn)
+                  010065f4    00000018     display_cc32xx.a : DisplayUart2.om4 (.text.DisplayUart2Min_close)
+                  0100660c    00000018     release_pm4.om4 (.text.ti_sysbios_BIOS_exitFunc__I)
+                  01006624    00000018     release_pm4.om4 (.text.ti_sysbios_BIOS_rtsUnlock__I)
+                  0100663c    00000018     release_pm4.om4 (.text.ti_sysbios_family_arm_m3_Hwi_Params__init__S)
+                  01006654    00000018     sysbios.am4 : m3_TaskSupport_asm_gnu.obj (.text.ti_sysbios_family_arm_m3_TaskSupport_glue)
+                  0100666c    00000018                 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_stop__E)
+                  01006684    00000018     release_pm4.om4 (.text.ti_sysbios_gates_GateHwi_Handle__label__S)
+                  0100669c    00000018     release_pm4.om4 (.text.ti_sysbios_gates_GateMutex_Handle__label__S)
+                  010066b4    00000018     sysbios.am4 : gates_GateMutex.o (.text.ti_sysbios_gates_GateMutex_leave__E)
+                  010066cc    00000018     release_pm4.om4 (.text.ti_sysbios_heaps_HeapMem_Handle__label__S)
+                  010066e4    00000018     release_pm4.om4 (.text.ti_sysbios_knl_Clock_Params__init__S)
+                  010066fc    00000018     release_pm4.om4 (.text.ti_sysbios_knl_Semaphore_Params__init__S)
+                  01006714    00000018     release_pm4.om4 (.text.ti_sysbios_knl_Task_Params__init__S)
+                  0100672c    00000018     sysbios.am4 : knl_Task.o (.text.ti_sysbios_knl_Task_unblock__E)
+                  01006744    00000018                 : runtime_Error.o (.text.xdc_runtime_Error_init__E)
+                  0100675c    00000018                 : runtime_System.o (.text.xdc_runtime_System_exit__E)
+                  01006774    00000016     ti_drivers_config.o (.text.Board_init)
+                  0100678a    00000016     display_cc32xx.a : Display.om4 (.text.Display_doPrintf)
+                  010067a0    00000016     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2Support_txDone)
+                  010067b6    00000016     driverlib.a : uart.obj (.text.UARTDMADisable)
+                  010067cc    00000016                 : uart.obj (.text.UARTIntDisable)
+                  010067e2    00000016     sysbios.am4 : tirtos_pthread.o (.text._pthread_runStub)
+                  010067f8    00000016                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_Instance_finalize__E)
+                  0100680e    00000014     dpl_cc32xx.a : HwiP_tirtos.om4 (.text.HwiP_interruptsEnabled)
+                  01006822    00000002     sysbios.am4 : runtime_SysCallback.o (.text.xdc_runtime_SysCallback_defaultPutch)
+                  01006824    00000014     drivers_cc32xx.a : PowerCC32XX.om4 (.text.Power_getTransitionLatency)
+                  01006838    00000014                      : PowerCC32XX.om4 (.text.Power_idleFunc)
+                  0100684c    00000014     dpl_cc32xx.a : SemaphoreP_tirtos.om4 (.text.SemaphoreP_pend)
+                  01006860    00000014     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2CC32XX_readTimeout)
+                  01006874    00000014     driverlib.a : uart.obj (.text.UARTIntEnable)
+                  01006888    00000014     libc.a : args_main.c.obj (.text._args_main)
+                  0100689c    00000014     release_pm4.om4 (.text.free)
+                  010068b0    00000014     sysbios.am4 : tirtos_pthread.o (.text.pthread_attr_setschedparam)
+                  010068c4    00000014                 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_switchFromBootStack__E)
+                  010068d8    00000014     release_pm4.om4 (.text.ti_sysbios_family_arm_m3_Timer_Module__startupDone__S)
+                  010068ec    00000014     sysbios.am4 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_getFreq__E)
+                  01006900    00000014     release_pm4.om4 (.text.ti_sysbios_hal_Hwi_HwiProxy_Module__startupDone__S)
+                  01006914    00000014     release_pm4.om4 (.text.ti_sysbios_knl_Clock_TimerProxy_Module__startupDone__S)
+                  01006928    00000014     sysbios.am4 : knl_Clock.o (.text.ti_sysbios_knl_Clock_startI__E)
+                  0100693c    00000014                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_tickReconfig__E)
+                  01006950    00000014                 : runtime_Memory.o (.text.xdc_runtime_Memory_free__E)
+                  01006964    00000014     libclang_rt.builtins.a : aeabi_memset.S.obj (.text)
+                  01006978    00000014                            : aeabi_uldivmod.S.obj (.text)
+                  0100698c    00000012     libc.a : memcpy_t2.S.obj (.text:TI_memcpy_small)
+                  0100699e    00000002     sysbios.am4 : runtime_System.o (.text.xdc_runtime_System_abortSpin__E)
+                  010069a0    00000010     drivers_cc32xx.a : ADC.om4 (.text.ADC_Params_init)
+                  010069b0    00000010     dpl_cc32xx.a : HwiP_tirtos.om4 (.text.HwiP_Params_init)
+                  010069c0    00000010     drivers_cc32xx.a : RingBuf.om4 (.text.RingBuf_construct)
+                  010069d0    00000010     driverlib.a : uart.obj (.text.UARTIntClear)
+                  010069e0    00000010                 : uart.obj (.text.UARTRxErrorGet)
+                  010069f0    00000010     sysbios.am4 : _BIOS.o (.text.ti_sysbios_BIOS_getCpuFreq__E)
+                  01006a00    00000010                 : _BIOS.o (.text.ti_sysbios_BIOS_setThreadType__E)
+                  01006a10    00000010                 : gates_GateMutex.o (.text.ti_sysbios_gates_GateMutex_Instance_finalize__E)
+                  01006a20    00000010                 : hal_Hwi.o (.text.ti_sysbios_hal_Hwi_Module_startup__E)
+                  01006a30    00000010                 : knl_Semaphore.o (.text.ti_sysbios_knl_Semaphore_Instance_finalize__E)
+                  01006a40    00000010                 : knl_Swi.o (.text.ti_sysbios_knl_Swi_disable__E)
+                  01006a50    00000010                 : knl_Swi.o (.text.ti_sysbios_knl_Swi_enabled__E)
+                  01006a60    00000010                 : knl_Task.o (.text.ti_sysbios_knl_Task_disable__E)
+                  01006a70    00000010                 : runtime_Gate.o (.text.xdc_runtime_Gate_leaveSystem__E)
+                  01006a80    00000010     release_pm4.om4 (.text.xdc_runtime_Startup_exec__I)
+                  01006a90    00000010     sysbios.am4 : runtime_System.o (.text.xdc_runtime_System_vsnprintf__E)
+                  01006aa0    00000010     libc.a : copy_zero_init.c.obj (.text:decompress:ZI)
+                  01006ab0    0000000e     sysbios.am4 : tirtos_pthread.o (.text.pthread_self)
+                  01006abe    0000000e     dpl_cc32xx.a : HwiP_tirtos.om4 (.text.ti_sysbios_family_arm_m3_Hwi_Params_init)
+                  01006acc    0000000e     sysbios.am4 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_startup__E)
+                  01006ada    0000000e     dpl_cc32xx.a : ClockP_tirtos.om4 (.text.ti_sysbios_knl_Clock_Params_init)
+                  01006ae8    0000000e     release_pm4.om4 (.text.ti_sysbios_knl_Mailbox_Object__get__S)
+                  01006af6    0000000e     sysbios.am4 : knl_Queue.o (.text.ti_sysbios_knl_Queue_remove__E)
+                  01006b04    0000000e     dpl_cc32xx.a : SemaphoreP_tirtos.om4 (.text.ti_sysbios_knl_Semaphore_Params_init)
+                  01006b12    0000000e     driverlib.a : udma.obj (.text.uDMAErrorStatusClear)
+                  01006b20    0000000e     release_pm4.om4 (.text.xdc_runtime_Memory_HeapProxy_alloc__E)
+                  01006b2e    0000000e     libc.a : memset_t2.S.obj (.text:TI_memset_small)
+                  01006b3c    0000000e            : copy_decompress_none.c.obj (.text:decompress:none)
+                  01006b4a    0000000c     sysbios.am4 : runtime_System.o (.text.OUTLINED_FUNCTION_0)
+                  01006b56    00000002                 : runtime_System.o (.text.xdc_runtime_System_exitSpin__E)
+                  01006b58    0000000c     drivers_cc32xx.a : PowerCC32XX.om4 (.text.Power_getConstraintMask)
+                  01006b64    0000000c     dpl_cc32xx.a : SemaphoreP_tirtos.om4 (.text.SemaphoreP_delete)
+                  01006b70    0000000c     drivers_cc32xx.a : UART2CC32XX.om4 (.text.UART2CC32XX_postNotifyFxn)
+                  01006b7c    0000000c                      : UART2CC32XX.om4 (.text.UART2Support_disableTx)
+                  01006b88    0000000c                      : UART2CC32XX.om4 (.text.UART2Support_enableTx)
+                  01006b94    0000000c                      : UART2.om4 (.text.UART2_Params_init)
+                  01006ba0    0000000c     libc.a : _lock.c.obj (.text._register_lock)
+                  01006bac    0000000c            : _lock.c.obj (.text._register_unlock)
+                  01006bb8    0000000c     sysbios.am4 : tirtos_pthread.o (.text.pthread_attr_setdetachstate)
+                  01006bc4    0000000c                 : _BIOS.o (.text.ti_sysbios_BIOS_exit__E)
+                  01006bd0    0000000c                 : _BIOS.o (.text.ti_sysbios_BIOS_start__E)
+                  01006bdc    0000000c                 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_disableFxn__E)
+                  01006be8    0000000c                 : m3_TaskSupport.o (.text.ti_sysbios_family_arm_m3_TaskSupport_getStackAlignment__E)
+                  01006bf4    0000000c                 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_getHandle__E)
+                  01006c00    0000000c                 : gates_GateHwi.o (.text.ti_sysbios_gates_GateHwi_enter__E)
+                  01006c0c    0000000c                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_getTicks__E)
+                  01006c18    0000000c                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_setTicks__E)
+                  01006c24    0000000c                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_tickStart__E)
+                  01006c30    0000000c                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_tickStop__E)
+                  01006c3c    0000000c                 : knl_Queue.o (.text.ti_sysbios_knl_Queue_dequeue__E)
+                  01006c48    0000000c                 : knl_Queue.o (.text.ti_sysbios_knl_Queue_empty__E)
+                  01006c54    0000000c                 : knl_Queue.o (.text.ti_sysbios_knl_Queue_enqueue__E)
+                  01006c60    0000000c                 : knl_Queue.o (.text.ti_sysbios_knl_Queue_insert__E)
+                  01006c6c    0000000c                 : knl_Task.o (.text.ti_sysbios_knl_Task_self__E)
+                  01006c78    0000000c                 : ti_ReentSupport.o (.text.ti_sysbios_rts_ti_ReentSupport_taskRegHook__I)
+                  01006c84    0000000c     driverlib.a : udma.obj (.text.uDMAErrorStatusGet)
+                  01006c90    0000000c     sysbios.am4 : runtime_Gate.o (.text.xdc_runtime_Gate_enterSystem__E)
+                  01006c9c    0000000c                 : runtime_Memory.o (.text.xdc_runtime_Memory_calloc__E)
+                  01006ca8    0000000c                 : runtime_Startup.o (.text.xdc_runtime_Startup_rtsDone__E)
+                  01006cb4    0000000c                 : runtime_SysCallback.o (.text.xdc_runtime_SysCallback_abort__E)
+                  01006cc0    0000000c                 : runtime_SysCallback.o (.text.xdc_runtime_SysCallback_exit__E)
+                  01006ccc    0000000c                 : runtime_SysCallback.o (.text.xdc_runtime_SysCallback_putch__E)
+                  01006cd8    0000000c                 : runtime_SysCallback.o (.text.xdc_runtime_SysCallback_ready__E)
+                  01006ce4    0000000a     dpl_cc32xx.a : ClockP_tirtos.om4 (.text.ClockP_Params_init)
+                  01006cee    0000000a     adcsinglechannel.o (.text.OUTLINED_FUNCTION_0)
+                  01006cf8    0000000a     drivers_cc32xx.a : UART2CC32XX.om4 (.text.OUTLINED_FUNCTION_0)
+                  01006d02    0000000a                      : UART2.om4 (.text.OUTLINED_FUNCTION_1)
+                  01006d0c    0000000a                      : UART2CC32XX.om4 (.text.OUTLINED_FUNCTION_1)
+                  01006d16    0000000a     sysbios.am4 : runtime_System.o (.text.OUTLINED_FUNCTION_1)
+                  01006d20    0000000a     startup.am4 : clang_startup.om4 (.text._system_pre_init)
+                  01006d2a    0000000a     ti_drivers_config.o (.text.dmaErrorFxn)
+                  01006d34    0000000a     release_pm4.om4 (.text.ti_sysbios_knl_Queue_Object__get__S)
+                  01006d3e    00000008     drivers_cc32xx.a : ADCCC32XX.om4 (.text.ADCCC32XX_init)
+                  01006d46    00000008     driverlib.a : utils.obj (.text.UtilsDelay)
+                  01006d4e    00000008     sysbios.am4 : heaps_HeapMem.o (.text.ti_sysbios_heaps_HeapMem_Object_get)
+                  01006d56    00000006     drivers_cc32xx.a : ADCCC32XX.om4 (.text.ADCCC32XX_control)
+                  01006d5c    00000006                      : ADC.om4 (.text.ADC_close)
+                  01006d62    00000006                      : ADC.om4 (.text.ADC_convert)
+                  01006d68    00000006                      : ADC.om4 (.text.ADC_convertToMicroVolts)
+                  01006d6e    00000006     display_cc32xx.a : DisplayUart2.om4 (.text.DisplayUart2Min_control)
+                  01006d74    00000006                      : DisplayUart2.om4 (.text.DisplayUart2Min_getType)
+                  01006d7a    00000006     drivers_cc32xx.a : UART2.om4 (.text.OUTLINED_FUNCTION_0)
+                  01006d80    00000006                      : UART2CC32XX.om4 (.text.UART2Support_powerRelConstraint)
+                  01006d86    00000006     sysbios.am4 : runtime_xdc_noinit.o (.text.__xdc__init)
+                  01006d8c    00000006                 : tirtos_pthread.o (.text.pthread_attr_setstacksize)
+                  01006d92    00000006                 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_doSwiRestore__I)
+                  01006d98    00000006                 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_doTaskRestore__I)
+                  01006d9e    00000006                 : m3_Hwi.o (.text.ti_sysbios_family_arm_m3_Hwi_restoreFxn__E)
+                  01006da4    00000006                 : gates_GateHwi.o (.text.ti_sysbios_gates_GateHwi_leave__E)
+                  01006daa    00000006                 : heaps_HeapMem.o (.text.ti_sysbios_heaps_HeapMem_isBlocking__E)
+                  01006db0    00000006                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_stop__E)
+                  01006db6    00000006                 : knl_Idle.o (.text.ti_sysbios_knl_Idle_loop__E)
+                  01006dbc    00000006                 : knl_Queue.o (.text.ti_sysbios_knl_Queue_Instance_init__E)
+                  01006dc2    00000006                 : knl_Queue.o (.text.ti_sysbios_knl_Queue_elemClear__E)
+                  01006dc8    00000006                 : knl_Swi.o (.text.ti_sysbios_knl_Swi_startup__E)
+                  01006dce    00000006     release_pm4.om4 (.text.xdc_runtime_Memory_HeapProxy_free__E)
+                  01006dd4    00000006     sysbios.am4 : runtime_System.o (.text.xdc_runtime_System_Module_startup__E)
+                  01006dda    00000004     dpl_cc32xx.a : ClockP_tirtos.om4 (.text.ClockP_destruct)
+                  01006dde    00000004                  : ClockP_tirtos.om4 (.text.ClockP_getCpuFreq)
+                  01006de2    00000004                  : ClockP_tirtos.om4 (.text.ClockP_setTimeout)
+                  01006de6    00000004                  : ClockP_tirtos.om4 (.text.ClockP_start)
+                  01006dea    00000004                  : ClockP_tirtos.om4 (.text.ClockP_stop)
+                  01006dee    00000004                  : HwiP_tirtos.om4 (.text.HwiP_clearInterrupt)
+                  01006df2    00000004                  : HwiP_tirtos.om4 (.text.HwiP_destruct)
+                  01006df6    00000004                  : HwiP_tirtos.om4 (.text.HwiP_disable)
+                  01006dfa    00000004                  : HwiP_tirtos.om4 (.text.HwiP_restore)
+                  01006dfe    00000004                  : SemaphoreP_tirtos.om4 (.text.SemaphoreP_destruct)
+                  01006e02    00000004                  : SemaphoreP_tirtos.om4 (.text.SemaphoreP_post)
+                  01006e06    00000004                  : SystemP_tirtos.om4 (.text.SystemP_vsnprintf)
+                  01006e0a    00000004     startup.am4 : clang_startup.om4 (.text._system_post_cinit)
+                  01006e0e    00000004     release_pm4.om4 (.text.aligned_alloc)
+                  01006e12    00000004     release_pm4.om4 (.text.malloc)
+                  01006e16    00000004     sysbios.am4 : m3_Timer.o (.text.ti_sysbios_family_arm_m3_Timer_getMaxTicks__E)
+                  01006e1a    00000004                 : gates_GateHwi.o (.text.ti_sysbios_gates_GateHwi_query__E)
+                  01006e1e    00000004                 : gates_GateMutex.o (.text.ti_sysbios_gates_GateMutex_query__E)
+                  01006e22    00000004     release_pm4.om4 (.text.ti_sysbios_hal_Hwi_HwiProxy_getStackInfo__E)
+                  01006e26    00000004     release_pm4.om4 (.text.ti_sysbios_hal_Hwi_HwiProxy_startup__E)
+                  01006e2a    00000004     release_pm4.om4 (.text.ti_sysbios_hal_Hwi_HwiProxy_switchFromBootStack__E)
+                  01006e2e    00000004     sysbios.am4 : hal_Hwi.o (.text.ti_sysbios_hal_Hwi_getStackInfo__E)
+                  01006e32    00000004                 : hal_Hwi_startup.o (.text.ti_sysbios_hal_Hwi_startup__E)
+                  01006e36    00000004                 : hal_Hwi.o (.text.ti_sysbios_hal_Hwi_switchFromBootStack__E)
+                  01006e3a    00000004     release_pm4.om4 (.text.ti_sysbios_heaps_HeapMem_Module_GateProxy_enter__E)
+                  01006e3e    00000004     release_pm4.om4 (.text.ti_sysbios_heaps_HeapMem_Module_GateProxy_leave__E)
+                  01006e42    00000004     release_pm4.om4 (.text.ti_sysbios_heaps_HeapMem_Module_GateProxy_query__E)
+                  01006e46    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Clock_TimerProxy_getMaxTicks__E)
+                  01006e4a    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Clock_TimerProxy_setPeriodMicroSecs__E)
+                  01006e4e    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Clock_TimerProxy_start__E)
+                  01006e52    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Clock_TimerProxy_stop__E)
+                  01006e56    00000004     sysbios.am4 : knl_Clock.o (.text.ti_sysbios_knl_Clock_getTicksUntilTimeout__E)
+                  01006e5a    00000004                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_removeI__E)
+                  01006e5e    00000004                 : knl_Clock.o (.text.ti_sysbios_knl_Clock_setTimeout__E)
+                  01006e62    00000004                 : knl_Queue.o (.text.ti_sysbios_knl_Queue_head__E)
+                  01006e66    00000004                 : knl_Queue.o (.text.ti_sysbios_knl_Queue_next__E)
+                  01006e6a    00000004                 : knl_Queue.o (.text.ti_sysbios_knl_Queue_prev__E)
+                  01006e6e    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Semaphore_delete)
+                  01006e72    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Task_SupportProxy_Module__startupDone__S)
+                  01006e76    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Task_SupportProxy_getStackAlignment__E)
+                  01006e7a    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Task_SupportProxy_start__E)
+                  01006e7e    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Task_SupportProxy_swap__E)
+                  01006e82    00000004     release_pm4.om4 (.text.ti_sysbios_knl_Task_delete)
+                  01006e86    00000004     sysbios.am4 : knl_Task.o (.text.ti_sysbios_knl_Task_getArg1__E)
+                  01006e8a    00000004                 : knl_Task.o (.text.ti_sysbios_knl_Task_getEnv__E)
+                  01006e8e    00000004                 : knl_Task.o (.text.ti_sysbios_knl_Task_startup__E)
+                  01006e92    00000004                 : runtime_SysCallback.o (.text.xdc_runtime_SysCallback_defaultReady)
+                  01006e96    00000004     release_pm4.om4 (.text.xdc_runtime_System_Module_GateProxy_enter__E)
+                  01006e9a    00000004     release_pm4.om4 (.text.xdc_runtime_System_Module_GateProxy_leave__E)
+                  01006e9e    00000004     release_pm4.om4 (.text.xdc_runtime_System_SupportProxy_abort__E)
+                  01006ea2    00000004     release_pm4.om4 (.text.xdc_runtime_System_SupportProxy_exit__E)
+                  01006ea6    00000004     release_pm4.om4 (.text.xdc_runtime_System_SupportProxy_putch__E)
+                  01006eaa    00000004     release_pm4.om4 (.text.xdc_runtime_System_SupportProxy_ready__E)
+                  01006eae    00000002     --HOLE-- [fill = 0]
+                  01006eb0    00000004     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text)
+
+.rodata    0    01006eb8    000004b8     
+                  01006eb8    00000100     driverlib.a : pin.obj (.rodata.g_ulPinToPadMap)
+                  01006fb8    000000ca     adcsinglechannel.o (.rodata.str1.1)
+                  01007082    00000002     drivers_cc32xx.a : UART2CC32XX.om4 (.rodata.stopBits)
+                  01007084    000000a8     driverlib.a : prcm.obj (.rodata.PRCM_PeriphRegsList)
+                  0100712c    0000004d     release_pm4.om4 (.rodata.str1.1)
+                  01007179    00000001     ti_drivers_config.o (.rodata.ADC_count)
+                  0100717a    00000001     ti_drivers_config.o (.rodata.Display_count)
+                  0100717b    00000001     display_cc32xx.a : Display.om4 (.rodata.Display_defaultParams)
+                  0100717c    00000044     ti_drivers_config.o (.rodata.PowerCC32XX_config)
+                  010071c0    0000003c     ti_drivers_config.o (.rodata.uart2CC32XXHWAttrs0)
+                  010071fc    0000002a     sysbios.am4 : runtime_Startup.o (.rodata.str1.1)
+                  01007226    00000001     ti_drivers_config.o (.rodata.GPIO_pinUpperBound)
+                  01007227    00000001     ti_drivers_config.o (.rodata.UART2_count)
+                  01007228    00000028     drivers_cc32xx.a : GPIOCC32XX.om4 (.rodata.portConfigs)
+                  01007250    00000024                      : UART2.om4 (.rodata.UART2_defaultParams)
+                  01007274    00000021                      : GPIOCC32XX.om4 (.rodata.pinTable)
+                  01007295    00000003     --HOLE-- [fill = 0]
+                  01007298    00000020     display_cc32xx.a : DisplayUart2.om4 (.rodata.DisplayUart2Min_fxnTable)
+                  010072b8    0000001c     drivers_cc32xx.a : ADCCC32XX.om4 (.rodata.ADCCC32XX_fxnTable)
+                  010072d4    00000018     ti_drivers_config.o (.rodata.ADC_config)
+                  010072ec    00000018     sysbios.am4 : runtime_System.o (.rodata.str1.1)
+                  01007304    00000014     ti_drivers_config.o (.rodata.displayUart2HWAttrs)
+                  01007318    00000010     ti_drivers_config.o (.rodata.GPIO_config)
+                  01007328    0000000c     ti_drivers_config.o (.rodata.Display_config)
+                  01007334    0000000c     ti_drivers_config.o (.rodata.udmaCC3220SHWAttrs)
+                  01007340    00000008     drivers_cc32xx.a : ADC.om4 (.rodata.ADC_defaultParams)
+                  01007348    00000008     ti_drivers_config.o (.rodata.UART2_config)
+                  01007350    00000008     ti_drivers_config.o (.rodata.UDMACC32XX_config)
+                  01007358    00000008     ti_drivers_config.o (.rodata.adcCC32XXHWAttrs)
+                  01007360    00000005     drivers_cc32xx.a : UART2CC32XX.om4 (.rodata.parityType)
+                  01007365    00000004                      : UART2CC32XX.om4 (.rodata.cst4)
+                  01007369    00000003     --HOLE-- [fill = 0]
+                  0100736c    00000004     release_pm4.om4 (.rodata.heap0)
+
+.const     0    01007370    000003f1     
+                  01007370    0000003c     release_pm4.om4 (.const:ti_sysbios_knl_Task_Object__PARAMS__C)
+                  010073ac    00000030     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_Object__PARAMS__C)
+                  010073dc    00000028     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_Module__FXNS__C)
+                  01007404    00000024     release_pm4.om4 (.const:ti_sysbios_gates_GateHwi_Module__FXNS__C)
+                  01007428    00000024     release_pm4.om4 (.const:ti_sysbios_gates_GateMutex_Module__FXNS__C)
+                  0100744c    00000024     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_Object__PARAMS__C)
+                  01007470    00000024     release_pm4.om4 (.const:ti_sysbios_knl_Clock_Object__PARAMS__C)
+                  01007494    00000024     release_pm4.om4 (.const:ti_sysbios_knl_Semaphore_Object__PARAMS__C)
+                  010074b8    00000024     release_pm4.om4 (.const:xdc_runtime_Startup_sfxnTab__A)
+                  010074dc    00000020     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_Object__DESC__C)
+                  010074fc    00000020     release_pm4.om4 (.const:ti_sysbios_gates_GateHwi_Object__DESC__C)
+                  0100751c    00000020     release_pm4.om4 (.const:ti_sysbios_gates_GateMutex_Object__DESC__C)
+                  0100753c    00000020     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_Object__DESC__C)
+                  0100755c    00000020     release_pm4.om4 (.const:ti_sysbios_knl_Clock_Object__DESC__C)
+                  0100757c    00000020     release_pm4.om4 (.const:ti_sysbios_knl_Queue_Object__DESC__C)
+                  0100759c    00000020     release_pm4.om4 (.const:ti_sysbios_knl_Semaphore_Object__DESC__C)
+                  010075bc    00000020     release_pm4.om4 (.const:ti_sysbios_knl_Task_Object__DESC__C)
+                  010075dc    00000018     release_pm4.om4 (.const:ti_sysbios_gates_GateHwi_Object__PARAMS__C)
+                  010075f4    00000018     release_pm4.om4 (.const:ti_sysbios_gates_GateMutex_Object__PARAMS__C)
+                  0100760c    00000018     release_pm4.om4 (.const:ti_sysbios_knl_Queue_Object__PARAMS__C)
+                  01007624    00000018     release_pm4.om4 (.const:ti_sysbios_knl_Task_hooks__A)
+                  0100763c    00000012     release_pm4.om4 (.const:xdc_runtime_Startup_sfxnRts__A)
+                  0100764e    00000002     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_Module__id__C)
+                  01007650    0000000c     release_pm4.om4 (.const:xdc_runtime_Startup_firstFxns__A)
+                  0100765c    00000008     release_pm4.om4 (.const:ti_sysbios_knl_Idle_funcList__A)
+                  01007664    00000008     release_pm4.om4 (.const:ti_sysbios_knl_Idle_funcList__C)
+                  0100766c    00000008     release_pm4.om4 (.const:ti_sysbios_knl_Task_hooks__C)
+                  01007674    00000008     release_pm4.om4 (.const:xdc_runtime_Startup_firstFxns__C)
+                  0100767c    00000008     release_pm4.om4 (.const:xdc_runtime_Startup_lastFxns__C)
+                  01007684    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_E_alreadyDefined__C)
+                  01007688    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_E_badIntNum__C)
+                  0100768c    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_NUM_INTERRUPTS__C)
+                  01007690    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_Object__count__C)
+                  01007694    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_ccr__C)
+                  01007698    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_excHandlerFunc__C)
+                  0100769c    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_nullIsrFunc__C)
+                  010076a0    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_priGroup__C)
+                  010076a4    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_swiDisable__C)
+                  010076a8    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Hwi_swiRestore__C)
+                  010076ac    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_TaskSupport_stackAlignment__C)
+                  010076b0    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Timer_E_cannotSupport__C)
+                  010076b4    00000004     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Timer_startupNeeded__C)
+                  010076b8    00000004     release_pm4.om4 (.const:ti_sysbios_gates_GateMutex_Instance_State_sem__O)
+                  010076bc    00000004     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_E_memory__C)
+                  010076c0    00000004     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_Module__gateObj__C)
+                  010076c4    00000004     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_Object__count__C)
+                  010076c8    00000004     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_primaryHeapBaseAddr__C)
+                  010076cc    00000004     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_primaryHeapEndAddr__C)
+                  010076d0    00000004     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_reqAlign__C)
+                  010076d4    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Clock_Module_State_clockQ__O)
+                  010076d8    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Clock_tickPeriod__C)
+                  010076dc    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Mailbox_Instance_State_freeQue__O)
+                  010076e0    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Mailbox_Object__count__C)
+                  010076e4    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Mailbox_maxTypeAlign__C)
+                  010076e8    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Semaphore_Instance_State_pendQ__O)
+                  010076ec    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Swi_Object__count__C)
+                  010076f0    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Task_Module_State_inactiveQ__O)
+                  010076f4    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Task_Object__count__C)
+                  010076f8    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Task_Object__heap__C)
+                  010076fc    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Task_allBlockedFunc__C)
+                  01007700    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Task_defaultStackHeap__C)
+                  01007704    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Task_defaultStackSize__C)
+                  01007708    00000004     release_pm4.om4 (.const:ti_sysbios_knl_Task_numConstructedTasks__C)
+                  0100770c    00000004     release_pm4.om4 (.const:xdc_runtime_Error_E_memory__C)
+                  01007710    00000004     release_pm4.om4 (.const:xdc_runtime_Error_policyFxn__C)
+                  01007714    00000004     release_pm4.om4 (.const:xdc_runtime_IGateProvider_Interface__BASE__C)
+                  01007718    00000004     release_pm4.om4 (.const:xdc_runtime_IHeap_Interface__BASE__C)
+                  0100771c    00000004     release_pm4.om4 (.const:xdc_runtime_IModule_Interface__BASE__C)
+                  01007720    00000004     release_pm4.om4 (.const:xdc_runtime_Memory_defaultHeapInstance__C)
+                  01007724    00000004     release_pm4.om4 (.const:xdc_runtime_Startup_execImpl__C)
+                  01007728    00000004     release_pm4.om4 (.const:xdc_runtime_Startup_maxPasses__C)
+                  0100772c    00000004     release_pm4.om4 (.const:xdc_runtime_Startup_sfxnRts__C)
+                  01007730    00000004     release_pm4.om4 (.const:xdc_runtime_Startup_sfxnTab__C)
+                  01007734    00000004     release_pm4.om4 (.const:xdc_runtime_SysCallback_abortFxn__C)
+                  01007738    00000004     release_pm4.om4 (.const:xdc_runtime_SysCallback_exitFxn__C)
+                  0100773c    00000004     release_pm4.om4 (.const:xdc_runtime_SysCallback_putchFxn__C)
+                  01007740    00000004     release_pm4.om4 (.const:xdc_runtime_SysCallback_readyFxn__C)
+                  01007744    00000004     release_pm4.om4 (.const:xdc_runtime_System_Module__gateObj__C)
+                  01007748    00000004     release_pm4.om4 (.const:xdc_runtime_System_abortFxn__C)
+                  0100774c    00000004     release_pm4.om4 (.const:xdc_runtime_System_exitFxn__C)
+                  01007750    00000004     release_pm4.om4 (.const:xdc_runtime_System_extendFxn__C)
+                  01007754    00000004     release_pm4.om4 (.const:xdc_runtime_System_maxAtexitHandlers__C)
+                  01007758    00000002     release_pm4.om4 (.const:ti_sysbios_family_arm_m3_Timer_Module__id__C)
+                  0100775a    00000002     release_pm4.om4 (.const:ti_sysbios_heaps_HeapMem_Module__id__C)
+                  0100775c    00000002     release_pm4.om4 (.const:xdc_runtime_Memory_Module__id__C)
+                  0100775e    00000001     release_pm4.om4 (.const:ti_sysbios_knl_Clock_tickMode__C)
+                  0100775f    00000001     release_pm4.om4 (.const:ti_sysbios_knl_Clock_tickSource__C)
+                  01007760    00000001     release_pm4.om4 (.const:xdc_runtime_Error_policy__C)
+
+.cinit     0    01007764    0000025c     
+                  01007764    00000225     (.cinit..data.load) [load image, compression = lzss]
+                  01007989    00000003     --HOLE-- [fill = 0]
+                  0100798c    0000000c     (__TI_handler_table)
+                  01007998    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  010079a0    00000008     (.cinit..vecs.load) [load image, compression = zero_init]
+                  010079a8    00000018     (__TI_cinit_table)
+
+.init_array 
+*          0    01000800    00000000     UNINITIALIZED
+
+.vecs      0    20000000    0000030c     UNINITIALIZED
+                  20000000    0000030c     release_pm4.om4 (.vecs)
+
+.bss       0    20008400    0000121c     UNINITIALIZED
+                  20008400    00000400     ti_drivers_config.o (.bss.displayUART2Buffer)
+                  20008800    00000400     ti_drivers_config.o (.bss.dmaControlTable)
+                  20008c00    0000030c     (.common:ti_sysbios_family_arm_m3_Hwi_dispatchTable)
+                  20008f0c    00000004     adcsinglechannel.o (.bss.display)
+                  20008f10    00000200     release_pm4.om4 (.bss:taskStackSection)
+                  20009110    000001f8     (.common:uart2CC32XXObjects0)
+                  20009308    0000012c     (.common:PowerCC32XX_contextSave)
+                  20009434    00000084     (.common:gpioCallbackFunctions)
+                  200094b8    00000084     (.common:gpioUserArgs)
+                  2000953c    00000028     (.common:adcValue1MicroVolt)
+                  20009564    00000020     ti_drivers_config.o (.bss.uart2RxRingBuffer0)
+                  20009584    00000020     ti_drivers_config.o (.bss.uart2TxRingBuffer0)
+                  200095a4    0000001c     sysbios.am4 : tirtos_pthread_key.o (.bss.sem)
+                  200095c0    00000014     drivers_cc32xx.a : UDMACC32XX.om4 (.bss.postNotifyObj)
+                  200095d4    00000014                      : GPIOCC32XX.om4 (.bss.powerNotifyObj)
+                  200095e8    00000014     (.common:adcValue1)
+                  200095fc    0000000c     (.common:displayUart2Object)
+                  20009608    00000008     (.common:udmaCC3220SObject)
+                  20009610    00000004     (.common:adcValue0MicroVolt)
+                  20009614    00000004     (.common:ti_sysbios_knl_Task_Instance_State_0_hookEnv__A)
+                  20009618    00000002     (.common:adcCC32XXObjects)
+                  2000961a    00000002     (.common:adcValue0)
+
+.data      0    2000961c    000006b9     UNINITIALIZED
+                  2000961c    0000016c     drivers_cc32xx.a : PowerCC32XX.om4 (.data.PowerCC32XX_module)
+                  20009788    000000f8     ti_drivers_config.o (.data.parkInfo)
+                  20009880    00000084     ti_drivers_config.o (.data.gpioPinConfigs)
+                  20009904    00000080     release_pm4.om4 (.data.ti_sysbios_knl_Swi_Module_State_0_readyQ__A)
+                  20009984    00000080     release_pm4.om4 (.data.ti_sysbios_knl_Task_Module_State_0_readyQ__A)
+                  20009a04    0000004c     release_pm4.om4 (.data.ti_sysbios_knl_Task_Object__table__V)
+                  20009a50    00000044     release_pm4.om4 (.data:ti_sysbios_knl_Task_Module__state__V)
+                  20009a94    00000038     release_pm4.om4 (.data.ti_sysbios_gates_GateMutex_Object__table__V)
+                  20009acc    00000034     release_pm4.om4 (.data:ti_sysbios_family_arm_m3_Hwi_Module__state__V)
+                  20009b00    00000030     release_pm4.om4 (.data.ti_sysbios_family_arm_m3_Timer_Object__table__V)
+                  20009b30    00000030     release_pm4.om4 (.data.ti_sysbios_knl_Swi_Object__table__V)
+                  20009b60    0000002c     release_pm4.om4 (.data:ti_sysbios_knl_Clock_Module__state__V)
+                  20009b8c    00000024     release_pm4.om4 (.data:ti_sysbios_BIOS_Module__state__V)
+                  20009bb0    00000020     release_pm4.om4 (.data.xdc_runtime_Error_IgnoreBlock)
+                  20009bd0    0000001c     release_pm4.om4 (.data:ti_sysbios_knl_Swi_Module__state__V)
+                  20009bec    00000018     release_pm4.om4 (.data.ti_sysbios_family_arm_m3_Hwi_Object__table__V)
+                  20009c04    00000018     release_pm4.om4 (.data.ti_sysbios_heaps_HeapMem_Object__table__V)
+                  20009c1c    00000014     sysbios.am4 : tirtos_pthread.o (.data.defaultPthreadAttrs)
+                  20009c30    0000000c     release_pm4.om4 (.data:ti_sysbios_family_arm_m3_Timer_Module__state__V)
+                  20009c3c    00000008     drivers_cc32xx.a : GPIOCC32XX.om4 (.data..L_MergedGlobals)
+                  20009c44    00000008                      : UDMACC32XX.om4 (.data..L_MergedGlobals)
+                  20009c4c    00000008     release_pm4.om4 (.data.ti_sysbios_family_arm_m3_Hwi_Module__root__V)
+                  20009c54    00000008     release_pm4.om4 (.data.ti_sysbios_gates_GateHwi_Module__root__V)
+                  20009c5c    00000008     release_pm4.om4 (.data.ti_sysbios_gates_GateMutex_Module__root__V)
+                  20009c64    00000008     release_pm4.om4 (.data.ti_sysbios_heaps_HeapMem_Module__root__V)
+                  20009c6c    00000008     release_pm4.om4 (.data.ti_sysbios_knl_Clock_Module__root__V)
+                  20009c74    00000008     release_pm4.om4 (.data.ti_sysbios_knl_Queue_Module__root__V)
+                  20009c7c    00000008     release_pm4.om4 (.data.ti_sysbios_knl_Semaphore_Module__root__V)
+                  20009c84    00000008     release_pm4.om4 (.data.ti_sysbios_knl_Task_Module__root__V)
+                  20009c8c    00000008     release_pm4.om4 (.data.xdc_runtime_System_Module_State_0_atexitHandlers__A)
+                  20009c94    00000008     release_pm4.om4 (.data:xdc_runtime_Startup_Module__state__V)
+                  20009c9c    00000008     release_pm4.om4 (.data:xdc_runtime_System_Module__state__V)
+                  20009ca4    00000004     release_pm4.om4 (.data.__xdc__init__addr)
+                  20009ca8    00000004     libc.a : _lock.c.obj (.data._lock)
+                  20009cac    00000004            : _lock.c.obj (.data._unlock)
+                  20009cb0    00000004     sysbios.am4 : tirtos_pthread.o (.data.terminatedList)
+                  20009cb4    00000004     release_pm4.om4 (.data.ti_sysbios_family_arm_m3_Hwi_Module_State_0_excContext__A)
+                  20009cb8    00000004     release_pm4.om4 (.data.ti_sysbios_family_arm_m3_Hwi_Module_State_0_excStack__A)
+                  20009cbc    00000004     release_pm4.om4 (.data.ti_sysbios_gates_GateHwi_Object__table__V)
+                  20009cc0    00000004     release_pm4.om4 (.data.ti_sysbios_knl_Task_Module_State_0_idleTask__A)
+                  20009cc4    00000004     release_pm4.om4 (.data:ti_sysbios_family_arm_m3_TimestampProvider_Module__state__V)
+                  20009cc8    00000004     release_pm4.om4 (.data:ti_sysbios_rts_ti_ReentSupport_Module__state__V)
+                  20009ccc    00000004     release_pm4.om4 (.data:xdc_runtime_Memory_Module__state__V)
+                  20009cd0    00000002     release_pm4.om4 (.data.ti_sysbios_family_arm_m3_Hwi_Module_State_0_excActive__A)
+                  20009cd2    00000001     drivers_cc32xx.a : ADC.om4 (.data.isInitialized)
+                  20009cd3    00000001                      : GPIOCC32XX.om4 (.data.portHwiCreatedBitMask)
+                  20009cd4    00000001                      : ADCCC32XX.om4 (.data.state.1)
+
+.priheap   0    20000310    00008000     UNINITIALIZED
+                  20000310    00008000     --HOLE--
+
+.stack     0    2003fc00    00000400     UNINITIALIZED
+                  2003fc00    00000004     startup.am4 : boot_cortex_m.om4 (.stack)
+                  2003fc04    000003fc     --HOLE--
+
+.log_data 
+*          0    90000000    00000000     COPY SECTION
+
+.bootVecs 
+*          0    00000000    00000000     DSECT
+
+xdc.meta   0    00000000    000000f4     COPY SECTION
+                  00000000    000000f4     release_pm4.om4 (xdc.meta)
+
+xdc.noload 
+*          0    00000000    00000000     COPY SECTION
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+__llvm_prf_bits 
+*          0    20000000    00000000     UNINITIALIZED
+
+.binit     0    01000000    00000000     
+
+MODULE SUMMARY
+
+       Module                       code    ro data   rw data
+       ------                       ----    -------   -------
+    .\
+       adcsinglechannel.o           422     202       70     
+       main_tirtos.o                88      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       510     202       70     
+                                                             
+    .\syscfg\
+       ti_drivers_config.o          34      240       3282   
+    +--+----------------------------+-------+---------+---------+
+       Total:                       34      240       3282   
+                                                             
+    D:\344\workspace_v12\tirtos_builds_cc32xx_release_ticlang\Debug\configPkg\package\cfg\
+       release_pm4.om4              2306    1870      3002   
+    +--+----------------------------+-------+---------+---------+
+       Total:                       2306    1870      3002   
+                                                             
+    D:/ti/simplelink_cc32xx_sdk_6_10_00_05/kernel/tirtos/packages/ti/dpl/lib/ticlang/m4/dpl_cc32xx.a
+       PowerCC32XX_tirtos.om4       414     0         0      
+       HwiP_tirtos.om4              196     0         0      
+       SemaphoreP_tirtos.om4        186     0         0      
+       ClockP_tirtos.om4            114     0         0      
+       SystemP_tirtos.om4           4       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       914     0         0      
+                                                             
+    D:/ti/simplelink_cc32xx_sdk_6_10_00_05/source/ti/devices/cc32xx/driverlib/ticlang/Release/driverlib.a
+       prcm.obj                     1872    168       0      
+       pin.obj                      306     256       0      
+       udma.obj                     202     0         0      
+       uart.obj                     172     0         0      
+       flash.obj                    92      0         0      
+       utils.obj                    8       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       2652    424       0      
+                                                             
+    D:/ti/simplelink_cc32xx_sdk_6_10_00_05/source/ti/display/lib/ticlang/m4/display_cc32xx.a
+       DisplayUart2.om4             184     32        0      
+       Display.om4                  138     1         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       322     33        0      
+                                                             
+    D:/ti/simplelink_cc32xx_sdk_6_10_00_05/source/ti/drivers/lib/ticlang/m4/drivers_cc32xx.a
+       PowerCC32XX.om4              2124    0         664    
+       UART2CC32XX.om4              2524    11        0      
+       GPIOCC32XX.om4               908     73        29     
+       UART2.om4                    812     36        0      
+       ADCCC32XX.om4                402     28        1      
+       UDMACC32XX.om4               270     0         28     
+       RingBuf.om4                  268     0         0      
+       ADC.om4                      166     8         1      
+       PowerCC32XX_asm.om4          150     0         0      
+       List.om4                     76      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       7700    156       723    
+                                                             
+    D:\344\workspace_v12\tirtos_builds_cc32xx_release_ticlang\src\sysbios\sysbios.am4
+       knl_Task.o                   1740    0         0      
+       runtime_System.o             1096    24        0      
+       m3_Hwi.o                     1044    0         0      
+       knl_Swi.o                    598     0         0      
+       heaps_HeapMem.o              560     0         0      
+       tirtos_pthread.o             522     0         24     
+       knl_Clock.o                  518     0         0      
+       m3_Timer.o                   460     0         0      
+       knl_Semaphore.o              400     0         0      
+       runtime_Startup.o            276     42        0      
+       m3_Hwi_asm_gnu.obj           272     0         0      
+       runtime_Core-mem.o           192     0         0      
+       runtime_Memory.o             174     0         0      
+       tirtos_pthread_key.o         132     0         28     
+       m3_TaskSupport_asm_gnu.obj   132     0         0      
+       gates_GateMutex.o            120     0         0      
+       knl_Mailbox.o                120     0         0      
+       runtime_Error.o              116     0         0      
+       knl_Queue.o                  114     0         0      
+       m3_Hwi_asm_switch_gnu.obj    102     0         0      
+       runtime_Core-smem.o          70      0         0      
+       runtime_Core-params.o        64      0         0      
+       _BIOS.o                      58      0         0      
+       runtime_SysCallback.o        58      0         0      
+       m3_TaskSupport.o             56      0         0      
+       m3_TimestampProvider.o       40      0         0      
+       knl_Idle.o                   38      0         0      
+       hal_Hwi_stack.o              32      0         0      
+       runtime_Gate.o               28      0         0      
+       gates_GateHwi.o              24      0         0      
+       hal_Hwi.o                    24      0         0      
+       ti_ReentSupport.o            12      0         0      
+       runtime_xdc_noinit.o         6       0         0      
+       hal_Hwi_startup.o            4       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       9202    66        52     
+                                                             
+    D:\ti\ccs1220\ccs\tools\compiler\ti-cgt-armllvm_2.1.2.LTS\lib\armv7em-ti-none-eabi/c/libc.a
+       copy_decompress_lzss.c.obj   106     0         0      
+       autoinit.c.obj               56      0         0      
+       _lock.c.obj                  26      0         8      
+       args_main.c.obj              20      0         0      
+       memcpy_t2.S.obj              18      0         0      
+       copy_zero_init.c.obj         16      0         0      
+       copy_decompress_none.c.obj   14      0         0      
+       memset_t2.S.obj              14      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       270     0         8      
+                                                             
+    D:\ti\ccs1220\ccs\tools\compiler\ti-cgt-armllvm_2.1.2.LTS\lib\clang/14.0.6/lib/armv7em-ti-none-eabi/libclang_rt.builtins.a
+       adddf3.S.obj                 438     0         0      
+       muldf3.S.obj                 252     0         0      
+       comparedf2.c.obj             220     0         0      
+       udivmoddi4.S.obj             176     0         0      
+       aeabi_dcmp.S.obj             98      0         0      
+       fixdfsi.S.obj                72      0         0      
+       fixunsdfsi.S.obj             68      0         0      
+       extendsfdf2.S.obj            56      0         0      
+       floatunsidf.S.obj            32      0         0      
+       aeabi_memset.S.obj           20      0         0      
+       aeabi_uldivmod.S.obj         20      0         0      
+       aeabi_memcpy.S.obj           4       0         0      
+       aeabi_div0.c.obj             2       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       1458    0         0      
+                                                             
+    D:\ti\simplelink_cc32xx_sdk_6_10_00_05\kernel\tirtos\packages\ti\targets\arm\rtsarm\lib\startup.am4
+       boot_cortex_m.om4            124     0         0      
+       clang_startup.om4            14      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       138     0         0      
+                                                             
+       Stack:                       0       0         1024   
+       Linker Generated:            0       601       0      
+    +--+----------------------------+-------+---------+---------+
+       Grand Total:                 25506   3592      8161   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 010079a8 records: 3, size/record: 8, table size: 24
+	.data: load addr=01007764, load size=00000225 bytes, run addr=2000961c, run size=000006b9 bytes, compression=lzss
+	.bss: load addr=01007998, load size=00000008 bytes, run addr=20008400, run size=0000121c bytes, compression=zero_init
+	.vecs: load addr=010079a0, load size=00000008 bytes, run addr=20000000, run size=0000030c bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0100798c records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                                            
+-------   ----                                                            
+01003961  ADCCC32XX_close                                                 
+01006d57  ADCCC32XX_control                                               
+010045e1  ADCCC32XX_convert                                               
+010063b1  ADCCC32XX_convertChain                                          
+01006139  ADCCC32XX_convertToMicroVolts                                   
+010072b8  ADCCC32XX_fxnTable                                              
+01006d3f  ADCCC32XX_init                                                  
+010034fd  ADCCC32XX_open                                                  
+010069a1  ADC_Params_init                                                 
+01006d5d  ADC_close                                                       
+010072d4  ADC_config                                                      
+01006d63  ADC_convert                                                     
+01006d69  ADC_convertToMicroVolts                                         
+01007179  ADC_count                                                       
+01007340  ADC_defaultParams                                               
+01004ed9  ADC_init                                                        
+010051c1  ADC_open                                                        
+01006775  Board_init                                                      
+01001c0f  Board_initHook                                                  
+01006ce5  ClockP_Params_init                                              
+01004dc1  ClockP_construct                                                
+01006ddb  ClockP_destruct                                                 
+01006ddf  ClockP_getCpuFreq                                               
+01006de3  ClockP_setTimeout                                               
+01006de7  ClockP_start                                                    
+01006deb  ClockP_stop                                                     
+0100200b  DisplayUart2Min_clear                                           
+01003197  DisplayUart2Min_clearLines                                      
+010065f5  DisplayUart2Min_close                                           
+01006d6f  DisplayUart2Min_control                                         
+01007298  DisplayUart2Min_fxnTable                                        
+01006d75  DisplayUart2Min_getType                                         
+01003353  DisplayUart2Min_init                                            
+01005301  DisplayUart2Min_open                                            
+010047d9  DisplayUart2Min_vprintf                                         
+01007328  Display_config                                                  
+0100717a  Display_count                                                   
+0100717b  Display_defaultParams                                           
+01005ef9  Display_doInit                                                  
+0100482d  Display_doOpen                                                  
+0100678b  Display_doPrintf                                                
+01004209  FlashDisable                                                    
+01007318  GPIO_config                                                     
+01004bc9  GPIO_disableInt                                                 
+01004c11  GPIO_enableInt                                                  
+010043d1  GPIO_hwiIntFxn                                                  
+01003581  GPIO_init                                                       
+01007226  GPIO_pinUpperBound                                              
+0100216d  GPIO_setConfig                                                  
+01004429  GPIO_setInterruptConfig                                         
+00008000  HEAPSIZE                                                        
+010069b1  HwiP_Params_init                                                
+01006def  HwiP_clearInterrupt                                             
+0100513d  HwiP_construct                                                  
+01005201  HwiP_create                                                     
+01006df3  HwiP_destruct                                                   
+01006df7  HwiP_disable                                                    
+0100680f  HwiP_interruptsEnabled                                          
+01006dfb  HwiP_restore                                                    
+UNDEFED   ITM_flush                                                       
+UNDEFED   ITM_restore                                                     
+01005f1d  List_put                                                        
+01005d41  List_remove                                                     
+01000b11  PRCMCC3200MCUInit                                               
+0100658d  PRCMHIBRegRead                                                  
+010065a7  PRCMHIBRegWrite                                                 
+01004589  PRCMLPDSEnter                                                   
+01004e07  PRCMLPDSEnterKeepDebugIf                                        
+0100496b  PRCMLPDSRestoreInfoSet                                          
+01005ced  PRCMPeripheralClkDisable                                        
+0100431d  PRCMPeripheralClkEnable                                         
+01003dad  PRCMPeripheralReset                                             
+010033e5  PRCMSysResetCauseGet                                            
+01003051  PinConfigSet                                                    
+0100569b  PinModeGet                                                      
+0100517f  PinModeSet                                                      
+010065c1  PinToPadGet                                                     
+0100717c  PowerCC32XX_config                                              
+01003199  PowerCC32XX_configureWakeup                                     
+20009308  PowerCC32XX_contextSave                                         
+01003101  PowerCC32XX_enterLPDS                                           
+01005d69  PowerCC32XX_getParkState                                        
+01005d91  PowerCC32XX_initPolicy                                          
+2000961c  PowerCC32XX_module                                              
+01004b35  PowerCC32XX_parkPin                                             
+01005db9  PowerCC32XX_reset                                               
+01005f41  PowerCC32XX_restoreParkState                                    
+01005aa5  PowerCC32XX_restoreParkedPin                                    
+01003145  PowerCC32XX_resumeLPDS                                          
+01004635  PowerCC32XX_setParkState                                        
+010022c9  PowerCC32XX_sleepPolicy                                         
+01006b59  Power_getConstraintMask                                         
+01006825  Power_getTransitionLatency                                      
+01006839  Power_idleFunc                                                  
+01003789  Power_init                                                      
+01005f65  Power_registerNotify                                            
+01004f1d  Power_releaseConstraint                                         
+01004481  Power_releaseDependency                                         
+010054a5  Power_setConstraint                                             
+01003879  Power_setDependency                                             
+01000fc9  Power_sleep                                                     
+01006159  Power_unregisterNotify                                          
+010069c1  RingBuf_construct                                               
+01005ad3  RingBuf_getConsume                                              
+01006115  RingBuf_getPointer                                              
+01004e4d  RingBuf_put                                                     
+010054dd  RingBuf_putAdvance                                              
+01005b01  RingBuf_putPointer                                              
+01005665  SemaphoreP_construct                                            
+01005ed1  SemaphoreP_constructBinary                                      
+01005de1  SemaphoreP_createBinary                                         
+01006b65  SemaphoreP_delete                                               
+01006dff  SemaphoreP_destruct                                             
+0100684d  SemaphoreP_pend                                                 
+01006e03  SemaphoreP_post                                                 
+01006e07  SystemP_vsnprintf                                               
+0100698d  TI_memcpy_small                                                 
+01006b2f  TI_memset_small                                                 
+01005bb9  UART2Support_disableRx                                          
+01006b7d  UART2Support_disableTx                                          
+01002c0d  UART2Support_dmaStartRx                                         
+01002d85  UART2Support_dmaStartTx                                         
+01004c59  UART2Support_dmaStopRx                                          
+01004265  UART2Support_dmaStopTx                                          
+01006b89  UART2Support_enableTx                                           
+01006d81  UART2Support_powerRelConstraint                                 
+01005b5d  UART2Support_sendData                                           
+010067a1  UART2Support_txDone                                             
+01006b95  UART2_Params_init                                               
+010024f1  UART2_close                                                     
+01007348  UART2_config                                                    
+01007227  UART2_count                                                     
+01007250  UART2_defaultParams                                             
+01001c11  UART2_open                                                      
+0100533d  UART2_rxDisable                                                 
+010030f3  UART2_write                                                     
+010016b9  UART2_writeTimeout                                              
+010067b7  UARTDMADisable                                                  
+01005b8b  UARTDisable                                                     
+01006339  UARTEnable                                                      
+010069d1  UARTIntClear                                                    
+010067cd  UARTIntDisable                                                  
+01006875  UARTIntEnable                                                   
+010069e1  UARTRxErrorGet                                                  
+01005515  UDMACC32XX_close                                                
+01007350  UDMACC32XX_config                                               
+01005379  UDMACC32XX_init                                                 
+01003689  UDMACC32XX_open                                                 
+01006d47  UtilsDelay                                                      
+00000000  __ASM__                                                         
+00000070  __ISA__                                                         
+00000083  __PLAT__                                                        
+20040000  __STACK_END                                                     
+00000400  __STACK_SIZE                                                    
+000000aa  __TARG__                                                        
+010079a8  __TI_CINIT_Base                                                 
+010079c0  __TI_CINIT_Limit                                                
+010079c0  __TI_CINIT_Warm                                                 
+0100798c  __TI_Handler_Table_Base                                         
+01007998  __TI_Handler_Table_Limit                                        
+010055f5  __TI_auto_init_nobinit_nopinit                                  
+01003e17  __TI_decompress_lzss                                            
+01006b3d  __TI_decompress_none                                            
+ffffffff  __TI_pprof_out_hndl                                             
+ffffffff  __TI_prof_data_size                                             
+ffffffff  __TI_prof_data_start                                            
+01007764  __TI_static_base__                                              
+01006aa1  __TI_zero_init                                                  
+000000d1  __TRDR__                                                        
+01001e5f  __adddf3                                                        
+01004d79  __aeabi_d2iz                                                    
+010050f9  __aeabi_d2uiz                                                   
+01001e5f  __aeabi_dadd                                                    
+010040e5  __aeabi_dcmpeq                                                  
+01004121  __aeabi_dcmpge                                                  
+01004135  __aeabi_dcmpgt                                                  
+0100410d  __aeabi_dcmple                                                  
+010040f9  __aeabi_dcmplt                                                  
+010023f5  __aeabi_dmul                                                    
+01001e55  __aeabi_dsub                                                    
+0100562d  __aeabi_f2d                                                     
+01003b1f  __aeabi_ldiv0                                                   
+01006971  __aeabi_memclr                                                  
+01006971  __aeabi_memclr4                                                 
+01006971  __aeabi_memclr8                                                 
+01006eb1  __aeabi_memcpy                                                  
+01006eb1  __aeabi_memcpy4                                                 
+01006eb1  __aeabi_memcpy8                                                 
+01006965  __aeabi_memset                                                  
+01006965  __aeabi_memset4                                                 
+01006965  __aeabi_memset8                                                 
+01006319  __aeabi_ui2d                                                    
+01006979  __aeabi_uldivmod                                                
+ffffffff  __binit__                                                       
+UNDEFED   __c_args__                                                      
+01003b21  __cmpdf2                                                        
+01003b21  __eqdf2                                                         
+0100562d  __extendsfdf2                                                   
+01004d79  __fixdfsi                                                       
+010050f9  __fixunsdfsi                                                    
+01006319  __floatunsidf                                                   
+01003ab1  __gedf2                                                         
+01003ab1  __gtdf2                                                         
+01003b21  __ledf2                                                         
+01003b21  __ltdf2                                                         
+UNDEFED   __mpu_init                                                      
+010023f5  __muldf3                                                        
+01003b21  __nedf2                                                         
+20008310  __primary_heap_end__                                            
+20000310  __primary_heap_start__                                          
+2003fc00  __stack                                                         
+20000000  __start___llvm_prf_bits                                         
+20000000  __start___llvm_prf_cnts                                         
+20000000  __stop___llvm_prf_bits                                          
+20000000  __stop___llvm_prf_cnts                                          
+01001e55  __subdf3                                                        
+01002ef5  __udivmoddi4                                                    
+01006d87  __xdc__init                                                     
+20009ca4  __xdc__init__addr                                               
+01006889  _args_main                                                      
+010060f1  _c_int00                                                        
+010062f9  _c_int00_noargs                                                 
+01006555  _c_int00_noinit                                                 
+01006571  _c_int00_noinit_noargs                                          
+20009ca8  _lock                                                           
+01003b8f  _nop                                                            
+01005be5  _pthread_cleanupFxn                                             
+01003605  _pthread_removeThreadKeys                                       
+01006ba1  _register_lock                                                  
+01006bad  _register_unlock                                                
+01006e0b  _system_post_cinit                                              
+01006d21  _system_pre_init                                                
+20009cac  _unlock                                                         
+01007358  adcCC32XXHWAttrs                                                
+20009618  adcCC32XXObjects                                                
+2000961a  adcValue0                                                       
+20009610  adcValue0MicroVolt                                              
+200095e8  adcValue1                                                       
+2000953c  adcValue1MicroVolt                                              
+01006e0f  aligned_alloc                                                   
+ffffffff  binit                                                           
+01005e09  calloc                                                          
+01007304  displayUart2HWAttrs                                             
+200095fc  displayUart2Object                                              
+0100689d  free                                                            
+20009434  gpioCallbackFunctions                                           
+20009880  gpioPinConfigs                                                  
+200094b8  gpioUserArgs                                                    
+0100736c  heap0                                                           
+010044d9  main                                                            
+01003355  mainThread                                                      
+01006e13  malloc                                                          
+01003f51  memalign                                                        
+20009788  parkInfo                                                        
+010063cd  pthread_attr_init                                               
+01006bb9  pthread_attr_setdetachstate                                     
+010068b1  pthread_attr_setschedparam                                      
+01006d8d  pthread_attr_setstacksize                                       
+010025e9  pthread_create                                                  
+010042c1  pthread_exit                                                    
+01006ab1  pthread_self                                                    
+01004ca1  realloc                                                         
+01004149  threadFxn0                                                      
+01002fa5  threadFxn1                                                      
+20009b8c  ti_sysbios_BIOS_Module__state__V                                
+010056d1  ti_sysbios_BIOS_atExitFunc__I                                   
+0100660d  ti_sysbios_BIOS_exitFunc__I                                     
+01006bc5  ti_sysbios_BIOS_exit__E                                         
+010069f1  ti_sysbios_BIOS_getCpuFreq__E                                   
+01004147  ti_sysbios_BIOS_linkedWithIncorrectBootLibrary__E               
+010045df  ti_sysbios_BIOS_nullFunc__I                                     
+01005e31  ti_sysbios_BIOS_registerRTSLock__I                              
+01005f89  ti_sysbios_BIOS_removeRTSLock__I                                
+010063e9  ti_sysbios_BIOS_rtsLock__I                                      
+01006625  ti_sysbios_BIOS_rtsUnlock__I                                    
+01006a01  ti_sysbios_BIOS_setThreadType__E                                
+01005805  ti_sysbios_BIOS_startFunc__I                                    
+01006bd1  ti_sysbios_BIOS_start__E                                        
+01007684  ti_sysbios_family_arm_m3_Hwi_E_alreadyDefined__C                
+01007688  ti_sysbios_family_arm_m3_Hwi_E_badIntNum__C                     
+01004f61  ti_sysbios_family_arm_m3_Hwi_Instance_finalize__E               
+0100322d  ti_sysbios_family_arm_m3_Hwi_Instance_init__E                   
+20009cd0  ti_sysbios_family_arm_m3_Hwi_Module_State_0_excActive__A        
+20009cb4  ti_sysbios_family_arm_m3_Hwi_Module_State_0_excContext__A       
+20009cb8  ti_sysbios_family_arm_m3_Hwi_Module_State_0_excStack__A         
+0100764e  ti_sysbios_family_arm_m3_Hwi_Module__id__C                      
+20009c4c  ti_sysbios_family_arm_m3_Hwi_Module__root__V                    
+20009acc  ti_sysbios_family_arm_m3_Hwi_Module__state__V                   
+010049b9  ti_sysbios_family_arm_m3_Hwi_Module_startup__E                  
+0100768c  ti_sysbios_family_arm_m3_Hwi_NUM_INTERRUPTS__C                  
+010074dc  ti_sysbios_family_arm_m3_Hwi_Object__DESC__C                    
+010073ac  ti_sysbios_family_arm_m3_Hwi_Object__PARAMS__C                  
+01007690  ti_sysbios_family_arm_m3_Hwi_Object__count__C                   
+01006405  ti_sysbios_family_arm_m3_Hwi_Object__get__S                     
+20009bec  ti_sysbios_family_arm_m3_Hwi_Object__table__V                   
+0100663d  ti_sysbios_family_arm_m3_Hwi_Params__init__S                    
+01007694  ti_sysbios_family_arm_m3_Hwi_ccr__C                             
+01005fad  ti_sysbios_family_arm_m3_Hwi_clearInterrupt__E                  
+01004689  ti_sysbios_family_arm_m3_Hwi_construct                          
+01005241  ti_sysbios_family_arm_m3_Hwi_construct2__E                      
+010046dd  ti_sysbios_family_arm_m3_Hwi_create                             
+01006421  ti_sysbios_family_arm_m3_Hwi_destruct                           
+01006bdd  ti_sysbios_family_arm_m3_Hwi_disableFxn__E                      
+01004fa5  ti_sysbios_family_arm_m3_Hwi_disableInterrupt__E                
+01003e81  ti_sysbios_family_arm_m3_Hwi_dispatchC__I                       
+20008c00  ti_sysbios_family_arm_m3_Hwi_dispatchTable                      
+010027c5  ti_sysbios_family_arm_m3_Hwi_dispatch__I                        
+01006d93  ti_sysbios_family_arm_m3_Hwi_doSwiRestore__I                    
+01006d99  ti_sysbios_family_arm_m3_Hwi_doTaskRestore__I                   
+01004fe9  ti_sysbios_family_arm_m3_Hwi_enableInterrupt__E                 
+01005e59  ti_sysbios_family_arm_m3_Hwi_excHandlerAsm__I                   
+01007698  ti_sysbios_family_arm_m3_Hwi_excHandlerFunc__C                  
+0100643d  ti_sysbios_family_arm_m3_Hwi_excHandler__I                      
+01005705  ti_sysbios_family_arm_m3_Hwi_getStackInfo__E                    
+01003709  ti_sysbios_family_arm_m3_Hwi_initNVIC__E                        
+01004ce9  ti_sysbios_family_arm_m3_Hwi_initStacks__E                      
+01002874  ti_sysbios_family_arm_m3_Hwi_interruptsAreDisabledButShouldNotBe
+0100769c  ti_sysbios_family_arm_m3_Hwi_nullIsrFunc__C                     
+e000e000  ti_sysbios_family_arm_m3_Hwi_nvic                               
+01002879  ti_sysbios_family_arm_m3_Hwi_pendSV__I                          
+01003bfd  ti_sysbios_family_arm_m3_Hwi_postInit__I                        
+010076a0  ti_sysbios_family_arm_m3_Hwi_priGroup__C                        
+20000000  ti_sysbios_family_arm_m3_Hwi_ramVectors                         
+01000800  ti_sysbios_family_arm_m3_Hwi_resetVectors                       
+01006d9f  ti_sysbios_family_arm_m3_Hwi_restoreFxn__E                      
+01006179  ti_sysbios_family_arm_m3_Hwi_setPriority__E                     
+01006acd  ti_sysbios_family_arm_m3_Hwi_startup__E                         
+010076a4  ti_sysbios_family_arm_m3_Hwi_swiDisable__C                      
+010076a8  ti_sysbios_family_arm_m3_Hwi_swiRestore__C                      
+010068c5  ti_sysbios_family_arm_m3_Hwi_switchFromBootStack__E             
+01004a05  ti_sysbios_family_arm_m3_TaskSupport_buildTaskStack             
+01006be9  ti_sysbios_family_arm_m3_TaskSupport_getStackAlignment__E       
+01006655  ti_sysbios_family_arm_m3_TaskSupport_glue                       
+010076ac  ti_sysbios_family_arm_m3_TaskSupport_stackAlignment__C          
+01005c3d  ti_sysbios_family_arm_m3_TaskSupport_start__E                   
+01006199  ti_sysbios_family_arm_m3_TaskSupport_swap__E                    
+010076b0  ti_sysbios_family_arm_m3_Timer_E_cannotSupport__C               
+01007758  ti_sysbios_family_arm_m3_Timer_Module__id__C                    
+010068d9  ti_sysbios_family_arm_m3_Timer_Module__startupDone__S           
+20009c30  ti_sysbios_family_arm_m3_Timer_Module__state__V                 
+01006459  ti_sysbios_family_arm_m3_Timer_Module_startup__E                
+20009b00  ti_sysbios_family_arm_m3_Timer_Object__table__V                 
+010068ed  ti_sysbios_family_arm_m3_Timer_getFreq__E                       
+01006bf5  ti_sysbios_family_arm_m3_Timer_getHandle__E                     
+01006e17  ti_sysbios_family_arm_m3_Timer_getMaxTicks__E                   
+01005739  ti_sysbios_family_arm_m3_Timer_initDevice__I                    
+01005835  ti_sysbios_family_arm_m3_Timer_periodicStub__I                  
+01005fd1  ti_sysbios_family_arm_m3_Timer_postInit__I                      
+010053b5  ti_sysbios_family_arm_m3_Timer_setPeriodMicroSecs__E            
+01004a51  ti_sysbios_family_arm_m3_Timer_setPeriod__E                     
+01005281  ti_sysbios_family_arm_m3_Timer_start__E                         
+010076b4  ti_sysbios_family_arm_m3_Timer_startupNeeded__C                 
+01005ff5  ti_sysbios_family_arm_m3_Timer_startup__E                       
+0100666d  ti_sysbios_family_arm_m3_Timer_stop__E                          
+20009cc4  ti_sysbios_family_arm_m3_TimestampProvider_Module__state__V     
+01005e81  ti_sysbios_family_arm_m3_TimestampProvider_Module_startup__E    
+01006357  ti_sysbios_family_xxx_Hwi_switchAndRunFunc                      
+01006685  ti_sysbios_gates_GateHwi_Handle__label__S                       
+0100482b  ti_sysbios_gates_GateHwi_Instance_init__E                       
+01007404  ti_sysbios_gates_GateHwi_Module__FXNS__C                        
+20009c54  ti_sysbios_gates_GateHwi_Module__root__V                        
+010074fc  ti_sysbios_gates_GateHwi_Object__DESC__C                        
+010075dc  ti_sysbios_gates_GateHwi_Object__PARAMS__C                      
+01005865  ti_sysbios_gates_GateHwi_Object__create__S                      
+010061b9  ti_sysbios_gates_GateHwi_Object__delete__S                      
+20009cbc  ti_sysbios_gates_GateHwi_Object__table__V                       
+01006c01  ti_sysbios_gates_GateHwi_enter__E                               
+01006da5  ti_sysbios_gates_GateHwi_leave__E                               
+01006e1b  ti_sysbios_gates_GateHwi_query__E                               
+0100669d  ti_sysbios_gates_GateMutex_Handle__label__S                     
+010076b8  ti_sysbios_gates_GateMutex_Instance_State_sem__O                
+01006a11  ti_sysbios_gates_GateMutex_Instance_finalize__E                 
+01006475  ti_sysbios_gates_GateMutex_Instance_init__E                     
+01007428  ti_sysbios_gates_GateMutex_Module__FXNS__C                      
+20009c5c  ti_sysbios_gates_GateMutex_Module__root__V                      
+0100751c  ti_sysbios_gates_GateMutex_Object__DESC__C                      
+010075f4  ti_sysbios_gates_GateMutex_Object__PARAMS__C                    
+01005895  ti_sysbios_gates_GateMutex_Object__create__S                    
+01006019  ti_sysbios_gates_GateMutex_Object__delete__S                    
+20009a94  ti_sysbios_gates_GateMutex_Object__table__V                     
+010058c5  ti_sysbios_gates_GateMutex_enter__E                             
+010066b5  ti_sysbios_gates_GateMutex_leave__E                             
+01006e1f  ti_sysbios_gates_GateMutex_query__E                             
+01006901  ti_sysbios_hal_Hwi_HwiProxy_Module__startupDone__S              
+01006e23  ti_sysbios_hal_Hwi_HwiProxy_getStackInfo__E                     
+01006e27  ti_sysbios_hal_Hwi_HwiProxy_startup__E                          
+01006e2b  ti_sysbios_hal_Hwi_HwiProxy_switchFromBootStack__E              
+01006a21  ti_sysbios_hal_Hwi_Module_startup__E                            
+01006e2f  ti_sysbios_hal_Hwi_getStackInfo__E                              
+010061d9  ti_sysbios_hal_Hwi_initStack                                    
+01006e33  ti_sysbios_hal_Hwi_startup__E                                   
+01006e37  ti_sysbios_hal_Hwi_switchFromBootStack__E                       
+010076bc  ti_sysbios_heaps_HeapMem_E_memory__C                            
+010066cd  ti_sysbios_heaps_HeapMem_Handle__label__S                       
+0100502d  ti_sysbios_heaps_HeapMem_Instance_init__E                       
+01006e3b  ti_sysbios_heaps_HeapMem_Module_GateProxy_enter__E              
+01006e3f  ti_sysbios_heaps_HeapMem_Module_GateProxy_leave__E              
+01006e43  ti_sysbios_heaps_HeapMem_Module_GateProxy_query__E              
+010073dc  ti_sysbios_heaps_HeapMem_Module__FXNS__C                        
+010076c0  ti_sysbios_heaps_HeapMem_Module__gateObj__C                     
+0100775a  ti_sysbios_heaps_HeapMem_Module__id__C                          
+20009c64  ti_sysbios_heaps_HeapMem_Module__root__V                        
+0100753c  ti_sysbios_heaps_HeapMem_Object__DESC__C                        
+0100744c  ti_sysbios_heaps_HeapMem_Object__PARAMS__C                      
+010076c4  ti_sysbios_heaps_HeapMem_Object__count__C                       
+010058f5  ti_sysbios_heaps_HeapMem_Object__create__S                      
+010061f9  ti_sysbios_heaps_HeapMem_Object__delete__S                      
+01006491  ti_sysbios_heaps_HeapMem_Object__get__S                         
+20009c04  ti_sysbios_heaps_HeapMem_Object__table__V                       
+010041a9  ti_sysbios_heaps_HeapMem_allocUnprotected__E                    
+01004531  ti_sysbios_heaps_HeapMem_alloc__E                               
+0100491d  ti_sysbios_heaps_HeapMem_freeUnprotected__E                     
+01005925  ti_sysbios_heaps_HeapMem_free__E                                
+01005071  ti_sysbios_heaps_HeapMem_getStats__E                            
+0100401d  ti_sysbios_heaps_HeapMem_initPrimary__I                         
+01006dab  ti_sysbios_heaps_HeapMem_isBlocking__E                          
+010076c8  ti_sysbios_heaps_HeapMem_primaryHeapBaseAddr__C                 
+010076cc  ti_sysbios_heaps_HeapMem_primaryHeapEndAddr__C                  
+010076d0  ti_sysbios_heaps_HeapMem_reqAlign__C                            
+010067f9  ti_sysbios_knl_Clock_Instance_finalize__E                       
+010053f1  ti_sysbios_knl_Clock_Instance_init__E                           
+010076d4  ti_sysbios_knl_Clock_Module_State_clockQ__O                     
+20009c6c  ti_sysbios_knl_Clock_Module__root__V                            
+20009b60  ti_sysbios_knl_Clock_Module__state__V                           
+01006219  ti_sysbios_knl_Clock_Module_startup__E                          
+0100755c  ti_sysbios_knl_Clock_Object__DESC__C                            
+01007470  ti_sysbios_knl_Clock_Object__PARAMS__C                          
+010066e5  ti_sysbios_knl_Clock_Params__init__S                            
+01006915  ti_sysbios_knl_Clock_TimerProxy_Module__startupDone__S          
+01006e47  ti_sysbios_knl_Clock_TimerProxy_getMaxTicks__E                  
+01006e4b  ti_sysbios_knl_Clock_TimerProxy_setPeriodMicroSecs__E           
+01006e4f  ti_sysbios_knl_Clock_TimerProxy_start__E                        
+01006e53  ti_sysbios_knl_Clock_TimerProxy_stop__E                         
+01005c69  ti_sysbios_knl_Clock_addI__E                                    
+01005955  ti_sysbios_knl_Clock_construct                                  
+01006239  ti_sysbios_knl_Clock_destruct                                   
+01005985  ti_sysbios_knl_Clock_doTick__I                                  
+01006e57  ti_sysbios_knl_Clock_getTicksUntilTimeout__E                    
+01006c0d  ti_sysbios_knl_Clock_getTicks__E                                
+010049b7  ti_sysbios_knl_Clock_logTick__E                                 
+01006e5b  ti_sysbios_knl_Clock_removeI__E                                 
+01006c19  ti_sysbios_knl_Clock_setTicks__E                                
+01006e5f  ti_sysbios_knl_Clock_setTimeout__E                              
+01006929  ti_sysbios_knl_Clock_startI__E                                  
+0100603d  ti_sysbios_knl_Clock_start__E                                   
+01006db1  ti_sysbios_knl_Clock_stop__E                                    
+0100775e  ti_sysbios_knl_Clock_tickMode__C                                
+010076d8  ti_sysbios_knl_Clock_tickPeriod__C                              
+0100693d  ti_sysbios_knl_Clock_tickReconfig__E                            
+0100775f  ti_sysbios_knl_Clock_tickSource__C                              
+01006c25  ti_sysbios_knl_Clock_tickStart__E                               
+01006c31  ti_sysbios_knl_Clock_tickStop__E                                
+0100487d  ti_sysbios_knl_Clock_walkQueuePeriodic__E                       
+01003475  ti_sysbios_knl_Clock_workFunc__E                                
+0100765c  ti_sysbios_knl_Idle_funcList__A                                 
+01007664  ti_sysbios_knl_Idle_funcList__C                                 
+01006db7  ti_sysbios_knl_Idle_loop__E                                     
+01006259  ti_sysbios_knl_Idle_run__E                                      
+010076dc  ti_sysbios_knl_Mailbox_Instance_State_freeQue__O                
+010050b5  ti_sysbios_knl_Mailbox_Module_startup__E                        
+010076e0  ti_sysbios_knl_Mailbox_Object__count__C                         
+01006ae9  ti_sysbios_knl_Mailbox_Object__get__S                           
+010076e4  ti_sysbios_knl_Mailbox_maxTypeAlign__C                          
+0100576d  ti_sysbios_knl_Mailbox_postInit__I                              
+01006dbd  ti_sysbios_knl_Queue_Instance_init__E                           
+20009c74  ti_sysbios_knl_Queue_Module__root__V                            
+0100757c  ti_sysbios_knl_Queue_Object__DESC__C                            
+0100760c  ti_sysbios_knl_Queue_Object__PARAMS__C                          
+01006d35  ti_sysbios_knl_Queue_Object__get__S                             
+01005c95  ti_sysbios_knl_Queue_construct                                  
+01006c3d  ti_sysbios_knl_Queue_dequeue__E                                 
+010064ad  ti_sysbios_knl_Queue_destruct                                   
+01006dc3  ti_sysbios_knl_Queue_elemClear__E                               
+01006c49  ti_sysbios_knl_Queue_empty__E                                   
+01006c55  ti_sysbios_knl_Queue_enqueue__E                                 
+01006e63  ti_sysbios_knl_Queue_head__E                                    
+01006c61  ti_sysbios_knl_Queue_insert__E                                  
+01006e67  ti_sysbios_knl_Queue_next__E                                    
+01006e6b  ti_sysbios_knl_Queue_prev__E                                    
+010064c9  ti_sysbios_knl_Queue_put__E                                     
+01006af7  ti_sysbios_knl_Queue_remove__E                                  
+010076e8  ti_sysbios_knl_Semaphore_Instance_State_pendQ__O                
+01006a31  ti_sysbios_knl_Semaphore_Instance_finalize__E                   
+01006061  ti_sysbios_knl_Semaphore_Instance_init__E                       
+20009c7c  ti_sysbios_knl_Semaphore_Module__root__V                        
+0100759c  ti_sysbios_knl_Semaphore_Object__DESC__C                        
+01007494  ti_sysbios_knl_Semaphore_Object__PARAMS__C                      
+01006085  ti_sysbios_knl_Semaphore_Object__delete__S                      
+010066fd  ti_sysbios_knl_Semaphore_Params__init__S                        
+010059b5  ti_sysbios_knl_Semaphore_construct                              
+010059e5  ti_sysbios_knl_Semaphore_create                                 
+01006e6f  ti_sysbios_knl_Semaphore_delete                                 
+01006279  ti_sysbios_knl_Semaphore_destruct                               
+01005cc1  ti_sysbios_knl_Semaphore_pendTimeout__I                         
+01002b41  ti_sysbios_knl_Semaphore_pend__E                                
+01004081  ti_sysbios_knl_Semaphore_post__E                                
+20009904  ti_sysbios_knl_Swi_Module_State_0_readyQ__A                     
+20009bd0  ti_sysbios_knl_Swi_Module__state__V                             
+010060a9  ti_sysbios_knl_Swi_Module_startup__E                            
+010076ec  ti_sysbios_knl_Swi_Object__count__C                             
+010064e5  ti_sysbios_knl_Swi_Object__get__S                               
+20009b30  ti_sysbios_knl_Swi_Object__table__V                             
+01006a41  ti_sysbios_knl_Swi_disable__E                                   
+01006a51  ti_sysbios_knl_Swi_enabled__E                                   
+01004d31  ti_sysbios_knl_Swi_post__E                                      
+01003801  ti_sysbios_knl_Swi_restoreHwi__E                                
+0100554d  ti_sysbios_knl_Swi_restore__E                                   
+01004731  ti_sysbios_knl_Swi_runLoop__I                                   
+01003c69  ti_sysbios_knl_Swi_run__I                                       
+01004785  ti_sysbios_knl_Swi_schedule__I                                  
+01006dc9  ti_sysbios_knl_Swi_startup__E                                   
+20009614  ti_sysbios_knl_Task_Instance_State_0_hookEnv__A                 
+20008f10  ti_sysbios_knl_Task_Instance_State_0_stack__A                   
+010026d9  ti_sysbios_knl_Task_Instance_finalize__E                        
+01002989  ti_sysbios_knl_Task_Instance_init__E                            
+20009cc0  ti_sysbios_knl_Task_Module_State_0_idleTask__A                  
+20009984  ti_sysbios_knl_Task_Module_State_0_readyQ__A                    
+010076f0  ti_sysbios_knl_Task_Module_State_inactiveQ__O                   
+20009c84  ti_sysbios_knl_Task_Module__root__V                             
+20009a50  ti_sysbios_knl_Task_Module__state__V                            
+010038ed  ti_sysbios_knl_Task_Module_startup__E                           
+010075bc  ti_sysbios_knl_Task_Object__DESC__C                             
+01007370  ti_sysbios_knl_Task_Object__PARAMS__C                           
+010076f4  ti_sysbios_knl_Task_Object__count__C                            
+01006299  ti_sysbios_knl_Task_Object__delete__S                           
+01006501  ti_sysbios_knl_Task_Object__get__S                              
+010076f8  ti_sysbios_knl_Task_Object__heap__C                             
+20009a04  ti_sysbios_knl_Task_Object__table__V                            
+01006715  ti_sysbios_knl_Task_Params__init__S                             
+01006e73  ti_sysbios_knl_Task_SupportProxy_Module__startupDone__S         
+01006e77  ti_sysbios_knl_Task_SupportProxy_getStackAlignment__E           
+01006e7b  ti_sysbios_knl_Task_SupportProxy_start__E                       
+01006e7f  ti_sysbios_knl_Task_SupportProxy_swap__E                        
+010076fc  ti_sysbios_knl_Task_allBlockedFunc__C                           
+01003ee9  ti_sysbios_knl_Task_allBlockedFunction__I                       
+0100542d  ti_sysbios_knl_Task_blockI__E                                   
+01004a9d  ti_sysbios_knl_Task_create                                      
+01007700  ti_sysbios_knl_Task_defaultStackHeap__C                         
+01007704  ti_sysbios_knl_Task_defaultStackSize__C                         
+01006e83  ti_sysbios_knl_Task_delete                                      
+01006a61  ti_sysbios_knl_Task_disable__E                                  
+010060cd  ti_sysbios_knl_Task_enter__I                                    
+01003cd5  ti_sysbios_knl_Task_exit__E                                     
+01006e87  ti_sysbios_knl_Task_getArg1__E                                  
+01006e8b  ti_sysbios_knl_Task_getEnv__E                                   
+01007624  ti_sysbios_knl_Task_hooks__A                                    
+0100766c  ti_sysbios_knl_Task_hooks__C                                    
+01007708  ti_sysbios_knl_Task_numConstructedTasks__C                      
+01002a65  ti_sysbios_knl_Task_postInit__I                                 
+01005a15  ti_sysbios_knl_Task_processVitalTaskFlag__I                     
+01005ea9  ti_sysbios_knl_Task_restoreHwi__E                               
+01005469  ti_sysbios_knl_Task_restore__E                                  
+01004ae9  ti_sysbios_knl_Task_schedule__I                                 
+01006c6d  ti_sysbios_knl_Task_self__E                                     
+01002cc9  ti_sysbios_knl_Task_setPri__E                                   
+01003d41  ti_sysbios_knl_Task_startCore__E                                
+01006e8f  ti_sysbios_knl_Task_startup__E                                  
+010061a0  ti_sysbios_knl_Task_swapReturn                                  
+01005585  ti_sysbios_knl_Task_unblockI__E                                 
+0100672d  ti_sysbios_knl_Task_unblock__E                                  
+20009cc8  ti_sysbios_rts_ti_ReentSupport_Module__state__V                 
+01006c79  ti_sysbios_rts_ti_ReentSupport_taskRegHook__I                   
+010032c1  uDMAChannelAttributeDisable                                     
+01006375  uDMAChannelIsEnabled                                            
+01006b13  uDMAErrorStatusClear                                            
+01006c85  uDMAErrorStatusGet                                              
+20009110  uart2CC32XXObjects0                                             
+01007334  udmaCC3220SHWAttrs                                              
+20009608  udmaCC3220SObject                                               
+00000001  xdc_rov_runtime_Mon__checksum                                   
+00000001  xdc_rov_runtime_Mon__write                                      
+010052c1  xdc_runtime_Core_assignParams__I                                
+01004e93  xdc_runtime_Core_constructObject__I                             
+01003fb7  xdc_runtime_Core_createObject__I                                
+01004377  xdc_runtime_Core_deleteObject__I                                
+0100770c  xdc_runtime_Error_E_memory__C                                   
+20009bb0  xdc_runtime_Error_IgnoreBlock                                   
+0100651d  xdc_runtime_Error_check__E                                      
+01006745  xdc_runtime_Error_init__E                                       
+01007710  xdc_runtime_Error_policyFxn__C                                  
+010062b9  xdc_runtime_Error_policyMin__E                                  
+01007760  xdc_runtime_Error_policy__C                                     
+010062d9  xdc_runtime_Error_raiseX__E                                     
+01006c91  xdc_runtime_Gate_enterSystem__E                                 
+01006a71  xdc_runtime_Gate_leaveSystem__E                                 
+01007714  xdc_runtime_IGateProvider_Interface__BASE__C                    
+01007718  xdc_runtime_IHeap_Interface__BASE__C                            
+0100771c  xdc_runtime_IModule_Interface__BASE__C                          
+01006b21  xdc_runtime_Memory_HeapProxy_alloc__E                           
+01006dcf  xdc_runtime_Memory_HeapProxy_free__E                            
+0100775c  xdc_runtime_Memory_Module__id__C                                
+20009ccc  xdc_runtime_Memory_Module__state__V                             
+010039d1  xdc_runtime_Memory_alloc__E                                     
+01006c9d  xdc_runtime_Memory_calloc__E                                    
+01007720  xdc_runtime_Memory_defaultHeapInstance__C                       
+01006951  xdc_runtime_Memory_free__E                                      
+01006393  xdc_runtime_Memory_valloc__E                                    
+20009c94  xdc_runtime_Startup_Module__state__V                            
+00000001  xdc_runtime_Startup__EXECFXN__C                                 
+00000001  xdc_runtime_Startup__RESETFXN__C                                
+01007724  xdc_runtime_Startup_execImpl__C                                 
+010048cd  xdc_runtime_Startup_exec__E                                     
+01006a81  xdc_runtime_Startup_exec__I                                     
+01007650  xdc_runtime_Startup_firstFxns__A                                
+01007674  xdc_runtime_Startup_firstFxns__C                                
+0100767c  xdc_runtime_Startup_lastFxns__C                                 
+01007728  xdc_runtime_Startup_maxPasses__C                                
+010056cf  xdc_runtime_Startup_reset__I                                    
+01006ca9  xdc_runtime_Startup_rtsDone__E                                  
+0100763c  xdc_runtime_Startup_sfxnRts__A                                  
+0100772c  xdc_runtime_Startup_sfxnRts__C                                  
+010074b8  xdc_runtime_Startup_sfxnTab__A                                  
+01007730  xdc_runtime_Startup_sfxnTab__C                                  
+01002e3d  xdc_runtime_Startup_startMods__I                                
+01007734  xdc_runtime_SysCallback_abortFxn__C                             
+01006cb5  xdc_runtime_SysCallback_abort__E                                
+01005ef7  xdc_runtime_SysCallback_defaultAbort                            
+01006137  xdc_runtime_SysCallback_defaultExit                             
+01006823  xdc_runtime_SysCallback_defaultPutch                            
+01006e93  xdc_runtime_SysCallback_defaultReady                            
+01007738  xdc_runtime_SysCallback_exitFxn__C                              
+01006cc1  xdc_runtime_SysCallback_exit__E                                 
+0100773c  xdc_runtime_SysCallback_putchFxn__C                             
+01006ccd  xdc_runtime_SysCallback_putch__E                                
+01007740  xdc_runtime_SysCallback_readyFxn__C                             
+01006cd9  xdc_runtime_SysCallback_ready__E                                
+01006e97  xdc_runtime_System_Module_GateProxy_enter__E                    
+01006e9b  xdc_runtime_System_Module_GateProxy_leave__E                    
+20009c8c  xdc_runtime_System_Module_State_0_atexitHandlers__A             
+01007744  xdc_runtime_System_Module__gateObj__C                           
+20009c9c  xdc_runtime_System_Module__state__V                             
+01006dd5  xdc_runtime_System_Module_startup__E                            
+01006e9f  xdc_runtime_System_SupportProxy_abort__E                        
+01006ea3  xdc_runtime_System_SupportProxy_exit__E                         
+01006ea7  xdc_runtime_System_SupportProxy_putch__E                        
+01006eab  xdc_runtime_System_SupportProxy_ready__E                        
+01007748  xdc_runtime_System_abortFxn__C                                  
+0100699f  xdc_runtime_System_abortSpin__E                                 
+01006539  xdc_runtime_System_abort__E                                     
+010057a1  xdc_runtime_System_atexit__E                                    
+010013d9  xdc_runtime_System_doPrint__I                                   
+0100774c  xdc_runtime_System_exitFxn__C                                   
+01006b57  xdc_runtime_System_exitSpin__E                                  
+0100675d  xdc_runtime_System_exit__E                                      
+01007750  xdc_runtime_System_extendFxn__C                                 
+01003a41  xdc_runtime_System_formatNum__I                                 
+01007754  xdc_runtime_System_maxAtexitHandlers__C                         
+0100200d  xdc_runtime_System_printfExtend__I                              
+01005a45  xdc_runtime_System_processAtExit__E                             
+01005a75  xdc_runtime_System_putchar__I                                   
+01006a91  xdc_runtime_System_vsnprintf__E                                 
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                                            
+-------   ----                                                            
+00000000  __ASM__                                                         
+00000001  xdc_rov_runtime_Mon__checksum                                   
+00000001  xdc_rov_runtime_Mon__write                                      
+00000001  xdc_runtime_Startup__EXECFXN__C                                 
+00000001  xdc_runtime_Startup__RESETFXN__C                                
+00000070  __ISA__                                                         
+00000083  __PLAT__                                                        
+000000aa  __TARG__                                                        
+000000d1  __TRDR__                                                        
+00000400  __STACK_SIZE                                                    
+00008000  HEAPSIZE                                                        
+01000800  ti_sysbios_family_arm_m3_Hwi_resetVectors                       
+01000b11  PRCMCC3200MCUInit                                               
+01000fc9  Power_sleep                                                     
+010013d9  xdc_runtime_System_doPrint__I                                   
+010016b9  UART2_writeTimeout                                              
+01001c0f  Board_initHook                                                  
+01001c11  UART2_open                                                      
+01001e55  __aeabi_dsub                                                    
+01001e55  __subdf3                                                        
+01001e5f  __adddf3                                                        
+01001e5f  __aeabi_dadd                                                    
+0100200b  DisplayUart2Min_clear                                           
+0100200d  xdc_runtime_System_printfExtend__I                              
+0100216d  GPIO_setConfig                                                  
+010022c9  PowerCC32XX_sleepPolicy                                         
+010023f5  __aeabi_dmul                                                    
+010023f5  __muldf3                                                        
+010024f1  UART2_close                                                     
+010025e9  pthread_create                                                  
+010026d9  ti_sysbios_knl_Task_Instance_finalize__E                        
+010027c5  ti_sysbios_family_arm_m3_Hwi_dispatch__I                        
+01002874  ti_sysbios_family_arm_m3_Hwi_interruptsAreDisabledButShouldNotBe
+01002879  ti_sysbios_family_arm_m3_Hwi_pendSV__I                          
+01002989  ti_sysbios_knl_Task_Instance_init__E                            
+01002a65  ti_sysbios_knl_Task_postInit__I                                 
+01002b41  ti_sysbios_knl_Semaphore_pend__E                                
+01002c0d  UART2Support_dmaStartRx                                         
+01002cc9  ti_sysbios_knl_Task_setPri__E                                   
+01002d85  UART2Support_dmaStartTx                                         
+01002e3d  xdc_runtime_Startup_startMods__I                                
+01002ef5  __udivmoddi4                                                    
+01002fa5  threadFxn1                                                      
+01003051  PinConfigSet                                                    
+010030f3  UART2_write                                                     
+01003101  PowerCC32XX_enterLPDS                                           
+01003145  PowerCC32XX_resumeLPDS                                          
+01003197  DisplayUart2Min_clearLines                                      
+01003199  PowerCC32XX_configureWakeup                                     
+0100322d  ti_sysbios_family_arm_m3_Hwi_Instance_init__E                   
+010032c1  uDMAChannelAttributeDisable                                     
+01003353  DisplayUart2Min_init                                            
+01003355  mainThread                                                      
+010033e5  PRCMSysResetCauseGet                                            
+01003475  ti_sysbios_knl_Clock_workFunc__E                                
+010034fd  ADCCC32XX_open                                                  
+01003581  GPIO_init                                                       
+01003605  _pthread_removeThreadKeys                                       
+01003689  UDMACC32XX_open                                                 
+01003709  ti_sysbios_family_arm_m3_Hwi_initNVIC__E                        
+01003789  Power_init                                                      
+01003801  ti_sysbios_knl_Swi_restoreHwi__E                                
+01003879  Power_setDependency                                             
+010038ed  ti_sysbios_knl_Task_Module_startup__E                           
+01003961  ADCCC32XX_close                                                 
+010039d1  xdc_runtime_Memory_alloc__E                                     
+01003a41  xdc_runtime_System_formatNum__I                                 
+01003ab1  __gedf2                                                         
+01003ab1  __gtdf2                                                         
+01003b1f  __aeabi_ldiv0                                                   
+01003b21  __cmpdf2                                                        
+01003b21  __eqdf2                                                         
+01003b21  __ledf2                                                         
+01003b21  __ltdf2                                                         
+01003b21  __nedf2                                                         
+01003b8f  _nop                                                            
+01003bfd  ti_sysbios_family_arm_m3_Hwi_postInit__I                        
+01003c69  ti_sysbios_knl_Swi_run__I                                       
+01003cd5  ti_sysbios_knl_Task_exit__E                                     
+01003d41  ti_sysbios_knl_Task_startCore__E                                
+01003dad  PRCMPeripheralReset                                             
+01003e17  __TI_decompress_lzss                                            
+01003e81  ti_sysbios_family_arm_m3_Hwi_dispatchC__I                       
+01003ee9  ti_sysbios_knl_Task_allBlockedFunction__I                       
+01003f51  memalign                                                        
+01003fb7  xdc_runtime_Core_createObject__I                                
+0100401d  ti_sysbios_heaps_HeapMem_initPrimary__I                         
+01004081  ti_sysbios_knl_Semaphore_post__E                                
+010040e5  __aeabi_dcmpeq                                                  
+010040f9  __aeabi_dcmplt                                                  
+0100410d  __aeabi_dcmple                                                  
+01004121  __aeabi_dcmpge                                                  
+01004135  __aeabi_dcmpgt                                                  
+01004147  ti_sysbios_BIOS_linkedWithIncorrectBootLibrary__E               
+01004149  threadFxn0                                                      
+010041a9  ti_sysbios_heaps_HeapMem_allocUnprotected__E                    
+01004209  FlashDisable                                                    
+01004265  UART2Support_dmaStopTx                                          
+010042c1  pthread_exit                                                    
+0100431d  PRCMPeripheralClkEnable                                         
+01004377  xdc_runtime_Core_deleteObject__I                                
+010043d1  GPIO_hwiIntFxn                                                  
+01004429  GPIO_setInterruptConfig                                         
+01004481  Power_releaseDependency                                         
+010044d9  main                                                            
+01004531  ti_sysbios_heaps_HeapMem_alloc__E                               
+01004589  PRCMLPDSEnter                                                   
+010045df  ti_sysbios_BIOS_nullFunc__I                                     
+010045e1  ADCCC32XX_convert                                               
+01004635  PowerCC32XX_setParkState                                        
+01004689  ti_sysbios_family_arm_m3_Hwi_construct                          
+010046dd  ti_sysbios_family_arm_m3_Hwi_create                             
+01004731  ti_sysbios_knl_Swi_runLoop__I                                   
+01004785  ti_sysbios_knl_Swi_schedule__I                                  
+010047d9  DisplayUart2Min_vprintf                                         
+0100482b  ti_sysbios_gates_GateHwi_Instance_init__E                       
+0100482d  Display_doOpen                                                  
+0100487d  ti_sysbios_knl_Clock_walkQueuePeriodic__E                       
+010048cd  xdc_runtime_Startup_exec__E                                     
+0100491d  ti_sysbios_heaps_HeapMem_freeUnprotected__E                     
+0100496b  PRCMLPDSRestoreInfoSet                                          
+010049b7  ti_sysbios_knl_Clock_logTick__E                                 
+010049b9  ti_sysbios_family_arm_m3_Hwi_Module_startup__E                  
+01004a05  ti_sysbios_family_arm_m3_TaskSupport_buildTaskStack             
+01004a51  ti_sysbios_family_arm_m3_Timer_setPeriod__E                     
+01004a9d  ti_sysbios_knl_Task_create                                      
+01004ae9  ti_sysbios_knl_Task_schedule__I                                 
+01004b35  PowerCC32XX_parkPin                                             
+01004bc9  GPIO_disableInt                                                 
+01004c11  GPIO_enableInt                                                  
+01004c59  UART2Support_dmaStopRx                                          
+01004ca1  realloc                                                         
+01004ce9  ti_sysbios_family_arm_m3_Hwi_initStacks__E                      
+01004d31  ti_sysbios_knl_Swi_post__E                                      
+01004d79  __aeabi_d2iz                                                    
+01004d79  __fixdfsi                                                       
+01004dc1  ClockP_construct                                                
+01004e07  PRCMLPDSEnterKeepDebugIf                                        
+01004e4d  RingBuf_put                                                     
+01004e93  xdc_runtime_Core_constructObject__I                             
+01004ed9  ADC_init                                                        
+01004f1d  Power_releaseConstraint                                         
+01004f61  ti_sysbios_family_arm_m3_Hwi_Instance_finalize__E               
+01004fa5  ti_sysbios_family_arm_m3_Hwi_disableInterrupt__E                
+01004fe9  ti_sysbios_family_arm_m3_Hwi_enableInterrupt__E                 
+0100502d  ti_sysbios_heaps_HeapMem_Instance_init__E                       
+01005071  ti_sysbios_heaps_HeapMem_getStats__E                            
+010050b5  ti_sysbios_knl_Mailbox_Module_startup__E                        
+010050f9  __aeabi_d2uiz                                                   
+010050f9  __fixunsdfsi                                                    
+0100513d  HwiP_construct                                                  
+0100517f  PinModeSet                                                      
+010051c1  ADC_open                                                        
+01005201  HwiP_create                                                     
+01005241  ti_sysbios_family_arm_m3_Hwi_construct2__E                      
+01005281  ti_sysbios_family_arm_m3_Timer_start__E                         
+010052c1  xdc_runtime_Core_assignParams__I                                
+01005301  DisplayUart2Min_open                                            
+0100533d  UART2_rxDisable                                                 
+01005379  UDMACC32XX_init                                                 
+010053b5  ti_sysbios_family_arm_m3_Timer_setPeriodMicroSecs__E            
+010053f1  ti_sysbios_knl_Clock_Instance_init__E                           
+0100542d  ti_sysbios_knl_Task_blockI__E                                   
+01005469  ti_sysbios_knl_Task_restore__E                                  
+010054a5  Power_setConstraint                                             
+010054dd  RingBuf_putAdvance                                              
+01005515  UDMACC32XX_close                                                
+0100554d  ti_sysbios_knl_Swi_restore__E                                   
+01005585  ti_sysbios_knl_Task_unblockI__E                                 
+010055f5  __TI_auto_init_nobinit_nopinit                                  
+0100562d  __aeabi_f2d                                                     
+0100562d  __extendsfdf2                                                   
+01005665  SemaphoreP_construct                                            
+0100569b  PinModeGet                                                      
+010056cf  xdc_runtime_Startup_reset__I                                    
+010056d1  ti_sysbios_BIOS_atExitFunc__I                                   
+01005705  ti_sysbios_family_arm_m3_Hwi_getStackInfo__E                    
+01005739  ti_sysbios_family_arm_m3_Timer_initDevice__I                    
+0100576d  ti_sysbios_knl_Mailbox_postInit__I                              
+010057a1  xdc_runtime_System_atexit__E                                    
+01005805  ti_sysbios_BIOS_startFunc__I                                    
+01005835  ti_sysbios_family_arm_m3_Timer_periodicStub__I                  
+01005865  ti_sysbios_gates_GateHwi_Object__create__S                      
+01005895  ti_sysbios_gates_GateMutex_Object__create__S                    
+010058c5  ti_sysbios_gates_GateMutex_enter__E                             
+010058f5  ti_sysbios_heaps_HeapMem_Object__create__S                      
+01005925  ti_sysbios_heaps_HeapMem_free__E                                
+01005955  ti_sysbios_knl_Clock_construct                                  
+01005985  ti_sysbios_knl_Clock_doTick__I                                  
+010059b5  ti_sysbios_knl_Semaphore_construct                              
+010059e5  ti_sysbios_knl_Semaphore_create                                 
+01005a15  ti_sysbios_knl_Task_processVitalTaskFlag__I                     
+01005a45  xdc_runtime_System_processAtExit__E                             
+01005a75  xdc_runtime_System_putchar__I                                   
+01005aa5  PowerCC32XX_restoreParkedPin                                    
+01005ad3  RingBuf_getConsume                                              
+01005b01  RingBuf_putPointer                                              
+01005b5d  UART2Support_sendData                                           
+01005b8b  UARTDisable                                                     
+01005bb9  UART2Support_disableRx                                          
+01005be5  _pthread_cleanupFxn                                             
+01005c3d  ti_sysbios_family_arm_m3_TaskSupport_start__E                   
+01005c69  ti_sysbios_knl_Clock_addI__E                                    
+01005c95  ti_sysbios_knl_Queue_construct                                  
+01005cc1  ti_sysbios_knl_Semaphore_pendTimeout__I                         
+01005ced  PRCMPeripheralClkDisable                                        
+01005d41  List_remove                                                     
+01005d69  PowerCC32XX_getParkState                                        
+01005d91  PowerCC32XX_initPolicy                                          
+01005db9  PowerCC32XX_reset                                               
+01005de1  SemaphoreP_createBinary                                         
+01005e09  calloc                                                          
+01005e31  ti_sysbios_BIOS_registerRTSLock__I                              
+01005e59  ti_sysbios_family_arm_m3_Hwi_excHandlerAsm__I                   
+01005e81  ti_sysbios_family_arm_m3_TimestampProvider_Module_startup__E    
+01005ea9  ti_sysbios_knl_Task_restoreHwi__E                               
+01005ed1  SemaphoreP_constructBinary                                      
+01005ef7  xdc_runtime_SysCallback_defaultAbort                            
+01005ef9  Display_doInit                                                  
+01005f1d  List_put                                                        
+01005f41  PowerCC32XX_restoreParkState                                    
+01005f65  Power_registerNotify                                            
+01005f89  ti_sysbios_BIOS_removeRTSLock__I                                
+01005fad  ti_sysbios_family_arm_m3_Hwi_clearInterrupt__E                  
+01005fd1  ti_sysbios_family_arm_m3_Timer_postInit__I                      
+01005ff5  ti_sysbios_family_arm_m3_Timer_startup__E                       
+01006019  ti_sysbios_gates_GateMutex_Object__delete__S                    
+0100603d  ti_sysbios_knl_Clock_start__E                                   
+01006061  ti_sysbios_knl_Semaphore_Instance_init__E                       
+01006085  ti_sysbios_knl_Semaphore_Object__delete__S                      
+010060a9  ti_sysbios_knl_Swi_Module_startup__E                            
+010060cd  ti_sysbios_knl_Task_enter__I                                    
+010060f1  _c_int00                                                        
+01006115  RingBuf_getPointer                                              
+01006137  xdc_runtime_SysCallback_defaultExit                             
+01006139  ADCCC32XX_convertToMicroVolts                                   
+01006159  Power_unregisterNotify                                          
+01006179  ti_sysbios_family_arm_m3_Hwi_setPriority__E                     
+01006199  ti_sysbios_family_arm_m3_TaskSupport_swap__E                    
+010061a0  ti_sysbios_knl_Task_swapReturn                                  
+010061b9  ti_sysbios_gates_GateHwi_Object__delete__S                      
+010061d9  ti_sysbios_hal_Hwi_initStack                                    
+010061f9  ti_sysbios_heaps_HeapMem_Object__delete__S                      
+01006219  ti_sysbios_knl_Clock_Module_startup__E                          
+01006239  ti_sysbios_knl_Clock_destruct                                   
+01006259  ti_sysbios_knl_Idle_run__E                                      
+01006279  ti_sysbios_knl_Semaphore_destruct                               
+01006299  ti_sysbios_knl_Task_Object__delete__S                           
+010062b9  xdc_runtime_Error_policyMin__E                                  
+010062d9  xdc_runtime_Error_raiseX__E                                     
+010062f9  _c_int00_noargs                                                 
+01006319  __aeabi_ui2d                                                    
+01006319  __floatunsidf                                                   
+01006339  UARTEnable                                                      
+01006357  ti_sysbios_family_xxx_Hwi_switchAndRunFunc                      
+01006375  uDMAChannelIsEnabled                                            
+01006393  xdc_runtime_Memory_valloc__E                                    
+010063b1  ADCCC32XX_convertChain                                          
+010063cd  pthread_attr_init                                               
+010063e9  ti_sysbios_BIOS_rtsLock__I                                      
+01006405  ti_sysbios_family_arm_m3_Hwi_Object__get__S                     
+01006421  ti_sysbios_family_arm_m3_Hwi_destruct                           
+0100643d  ti_sysbios_family_arm_m3_Hwi_excHandler__I                      
+01006459  ti_sysbios_family_arm_m3_Timer_Module_startup__E                
+01006475  ti_sysbios_gates_GateMutex_Instance_init__E                     
+01006491  ti_sysbios_heaps_HeapMem_Object__get__S                         
+010064ad  ti_sysbios_knl_Queue_destruct                                   
+010064c9  ti_sysbios_knl_Queue_put__E                                     
+010064e5  ti_sysbios_knl_Swi_Object__get__S                               
+01006501  ti_sysbios_knl_Task_Object__get__S                              
+0100651d  xdc_runtime_Error_check__E                                      
+01006539  xdc_runtime_System_abort__E                                     
+01006555  _c_int00_noinit                                                 
+01006571  _c_int00_noinit_noargs                                          
+0100658d  PRCMHIBRegRead                                                  
+010065a7  PRCMHIBRegWrite                                                 
+010065c1  PinToPadGet                                                     
+010065f5  DisplayUart2Min_close                                           
+0100660d  ti_sysbios_BIOS_exitFunc__I                                     
+01006625  ti_sysbios_BIOS_rtsUnlock__I                                    
+0100663d  ti_sysbios_family_arm_m3_Hwi_Params__init__S                    
+01006655  ti_sysbios_family_arm_m3_TaskSupport_glue                       
+0100666d  ti_sysbios_family_arm_m3_Timer_stop__E                          
+01006685  ti_sysbios_gates_GateHwi_Handle__label__S                       
+0100669d  ti_sysbios_gates_GateMutex_Handle__label__S                     
+010066b5  ti_sysbios_gates_GateMutex_leave__E                             
+010066cd  ti_sysbios_heaps_HeapMem_Handle__label__S                       
+010066e5  ti_sysbios_knl_Clock_Params__init__S                            
+010066fd  ti_sysbios_knl_Semaphore_Params__init__S                        
+01006715  ti_sysbios_knl_Task_Params__init__S                             
+0100672d  ti_sysbios_knl_Task_unblock__E                                  
+01006745  xdc_runtime_Error_init__E                                       
+0100675d  xdc_runtime_System_exit__E                                      
+01006775  Board_init                                                      
+0100678b  Display_doPrintf                                                
+010067a1  UART2Support_txDone                                             
+010067b7  UARTDMADisable                                                  
+010067cd  UARTIntDisable                                                  
+010067f9  ti_sysbios_knl_Clock_Instance_finalize__E                       
+0100680f  HwiP_interruptsEnabled                                          
+01006823  xdc_runtime_SysCallback_defaultPutch                            
+01006825  Power_getTransitionLatency                                      
+01006839  Power_idleFunc                                                  
+0100684d  SemaphoreP_pend                                                 
+01006875  UARTIntEnable                                                   
+01006889  _args_main                                                      
+0100689d  free                                                            
+010068b1  pthread_attr_setschedparam                                      
+010068c5  ti_sysbios_family_arm_m3_Hwi_switchFromBootStack__E             
+010068d9  ti_sysbios_family_arm_m3_Timer_Module__startupDone__S           
+010068ed  ti_sysbios_family_arm_m3_Timer_getFreq__E                       
+01006901  ti_sysbios_hal_Hwi_HwiProxy_Module__startupDone__S              
+01006915  ti_sysbios_knl_Clock_TimerProxy_Module__startupDone__S          
+01006929  ti_sysbios_knl_Clock_startI__E                                  
+0100693d  ti_sysbios_knl_Clock_tickReconfig__E                            
+01006951  xdc_runtime_Memory_free__E                                      
+01006965  __aeabi_memset                                                  
+01006965  __aeabi_memset4                                                 
+01006965  __aeabi_memset8                                                 
+01006971  __aeabi_memclr                                                  
+01006971  __aeabi_memclr4                                                 
+01006971  __aeabi_memclr8                                                 
+01006979  __aeabi_uldivmod                                                
+0100698d  TI_memcpy_small                                                 
+0100699f  xdc_runtime_System_abortSpin__E                                 
+010069a1  ADC_Params_init                                                 
+010069b1  HwiP_Params_init                                                
+010069c1  RingBuf_construct                                               
+010069d1  UARTIntClear                                                    
+010069e1  UARTRxErrorGet                                                  
+010069f1  ti_sysbios_BIOS_getCpuFreq__E                                   
+01006a01  ti_sysbios_BIOS_setThreadType__E                                
+01006a11  ti_sysbios_gates_GateMutex_Instance_finalize__E                 
+01006a21  ti_sysbios_hal_Hwi_Module_startup__E                            
+01006a31  ti_sysbios_knl_Semaphore_Instance_finalize__E                   
+01006a41  ti_sysbios_knl_Swi_disable__E                                   
+01006a51  ti_sysbios_knl_Swi_enabled__E                                   
+01006a61  ti_sysbios_knl_Task_disable__E                                  
+01006a71  xdc_runtime_Gate_leaveSystem__E                                 
+01006a81  xdc_runtime_Startup_exec__I                                     
+01006a91  xdc_runtime_System_vsnprintf__E                                 
+01006aa1  __TI_zero_init                                                  
+01006ab1  pthread_self                                                    
+01006acd  ti_sysbios_family_arm_m3_Hwi_startup__E                         
+01006ae9  ti_sysbios_knl_Mailbox_Object__get__S                           
+01006af7  ti_sysbios_knl_Queue_remove__E                                  
+01006b13  uDMAErrorStatusClear                                            
+01006b21  xdc_runtime_Memory_HeapProxy_alloc__E                           
+01006b2f  TI_memset_small                                                 
+01006b3d  __TI_decompress_none                                            
+01006b57  xdc_runtime_System_exitSpin__E                                  
+01006b59  Power_getConstraintMask                                         
+01006b65  SemaphoreP_delete                                               
+01006b7d  UART2Support_disableTx                                          
+01006b89  UART2Support_enableTx                                           
+01006b95  UART2_Params_init                                               
+01006ba1  _register_lock                                                  
+01006bad  _register_unlock                                                
+01006bb9  pthread_attr_setdetachstate                                     
+01006bc5  ti_sysbios_BIOS_exit__E                                         
+01006bd1  ti_sysbios_BIOS_start__E                                        
+01006bdd  ti_sysbios_family_arm_m3_Hwi_disableFxn__E                      
+01006be9  ti_sysbios_family_arm_m3_TaskSupport_getStackAlignment__E       
+01006bf5  ti_sysbios_family_arm_m3_Timer_getHandle__E                     
+01006c01  ti_sysbios_gates_GateHwi_enter__E                               
+01006c0d  ti_sysbios_knl_Clock_getTicks__E                                
+01006c19  ti_sysbios_knl_Clock_setTicks__E                                
+01006c25  ti_sysbios_knl_Clock_tickStart__E                               
+01006c31  ti_sysbios_knl_Clock_tickStop__E                                
+01006c3d  ti_sysbios_knl_Queue_dequeue__E                                 
+01006c49  ti_sysbios_knl_Queue_empty__E                                   
+01006c55  ti_sysbios_knl_Queue_enqueue__E                                 
+01006c61  ti_sysbios_knl_Queue_insert__E                                  
+01006c6d  ti_sysbios_knl_Task_self__E                                     
+01006c79  ti_sysbios_rts_ti_ReentSupport_taskRegHook__I                   
+01006c85  uDMAErrorStatusGet                                              
+01006c91  xdc_runtime_Gate_enterSystem__E                                 
+01006c9d  xdc_runtime_Memory_calloc__E                                    
+01006ca9  xdc_runtime_Startup_rtsDone__E                                  
+01006cb5  xdc_runtime_SysCallback_abort__E                                
+01006cc1  xdc_runtime_SysCallback_exit__E                                 
+01006ccd  xdc_runtime_SysCallback_putch__E                                
+01006cd9  xdc_runtime_SysCallback_ready__E                                
+01006ce5  ClockP_Params_init                                              
+01006d21  _system_pre_init                                                
+01006d35  ti_sysbios_knl_Queue_Object__get__S                             
+01006d3f  ADCCC32XX_init                                                  
+01006d47  UtilsDelay                                                      
+01006d57  ADCCC32XX_control                                               
+01006d5d  ADC_close                                                       
+01006d63  ADC_convert                                                     
+01006d69  ADC_convertToMicroVolts                                         
+01006d6f  DisplayUart2Min_control                                         
+01006d75  DisplayUart2Min_getType                                         
+01006d81  UART2Support_powerRelConstraint                                 
+01006d87  __xdc__init                                                     
+01006d8d  pthread_attr_setstacksize                                       
+01006d93  ti_sysbios_family_arm_m3_Hwi_doSwiRestore__I                    
+01006d99  ti_sysbios_family_arm_m3_Hwi_doTaskRestore__I                   
+01006d9f  ti_sysbios_family_arm_m3_Hwi_restoreFxn__E                      
+01006da5  ti_sysbios_gates_GateHwi_leave__E                               
+01006dab  ti_sysbios_heaps_HeapMem_isBlocking__E                          
+01006db1  ti_sysbios_knl_Clock_stop__E                                    
+01006db7  ti_sysbios_knl_Idle_loop__E                                     
+01006dbd  ti_sysbios_knl_Queue_Instance_init__E                           
+01006dc3  ti_sysbios_knl_Queue_elemClear__E                               
+01006dc9  ti_sysbios_knl_Swi_startup__E                                   
+01006dcf  xdc_runtime_Memory_HeapProxy_free__E                            
+01006dd5  xdc_runtime_System_Module_startup__E                            
+01006ddb  ClockP_destruct                                                 
+01006ddf  ClockP_getCpuFreq                                               
+01006de3  ClockP_setTimeout                                               
+01006de7  ClockP_start                                                    
+01006deb  ClockP_stop                                                     
+01006def  HwiP_clearInterrupt                                             
+01006df3  HwiP_destruct                                                   
+01006df7  HwiP_disable                                                    
+01006dfb  HwiP_restore                                                    
+01006dff  SemaphoreP_destruct                                             
+01006e03  SemaphoreP_post                                                 
+01006e07  SystemP_vsnprintf                                               
+01006e0b  _system_post_cinit                                              
+01006e0f  aligned_alloc                                                   
+01006e13  malloc                                                          
+01006e17  ti_sysbios_family_arm_m3_Timer_getMaxTicks__E                   
+01006e1b  ti_sysbios_gates_GateHwi_query__E                               
+01006e1f  ti_sysbios_gates_GateMutex_query__E                             
+01006e23  ti_sysbios_hal_Hwi_HwiProxy_getStackInfo__E                     
+01006e27  ti_sysbios_hal_Hwi_HwiProxy_startup__E                          
+01006e2b  ti_sysbios_hal_Hwi_HwiProxy_switchFromBootStack__E              
+01006e2f  ti_sysbios_hal_Hwi_getStackInfo__E                              
+01006e33  ti_sysbios_hal_Hwi_startup__E                                   
+01006e37  ti_sysbios_hal_Hwi_switchFromBootStack__E                       
+01006e3b  ti_sysbios_heaps_HeapMem_Module_GateProxy_enter__E              
+01006e3f  ti_sysbios_heaps_HeapMem_Module_GateProxy_leave__E              
+01006e43  ti_sysbios_heaps_HeapMem_Module_GateProxy_query__E              
+01006e47  ti_sysbios_knl_Clock_TimerProxy_getMaxTicks__E                  
+01006e4b  ti_sysbios_knl_Clock_TimerProxy_setPeriodMicroSecs__E           
+01006e4f  ti_sysbios_knl_Clock_TimerProxy_start__E                        
+01006e53  ti_sysbios_knl_Clock_TimerProxy_stop__E                         
+01006e57  ti_sysbios_knl_Clock_getTicksUntilTimeout__E                    
+01006e5b  ti_sysbios_knl_Clock_removeI__E                                 
+01006e5f  ti_sysbios_knl_Clock_setTimeout__E                              
+01006e63  ti_sysbios_knl_Queue_head__E                                    
+01006e67  ti_sysbios_knl_Queue_next__E                                    
+01006e6b  ti_sysbios_knl_Queue_prev__E                                    
+01006e6f  ti_sysbios_knl_Semaphore_delete                                 
+01006e73  ti_sysbios_knl_Task_SupportProxy_Module__startupDone__S         
+01006e77  ti_sysbios_knl_Task_SupportProxy_getStackAlignment__E           
+01006e7b  ti_sysbios_knl_Task_SupportProxy_start__E                       
+01006e7f  ti_sysbios_knl_Task_SupportProxy_swap__E                        
+01006e83  ti_sysbios_knl_Task_delete                                      
+01006e87  ti_sysbios_knl_Task_getArg1__E                                  
+01006e8b  ti_sysbios_knl_Task_getEnv__E                                   
+01006e8f  ti_sysbios_knl_Task_startup__E                                  
+01006e93  xdc_runtime_SysCallback_defaultReady                            
+01006e97  xdc_runtime_System_Module_GateProxy_enter__E                    
+01006e9b  xdc_runtime_System_Module_GateProxy_leave__E                    
+01006e9f  xdc_runtime_System_SupportProxy_abort__E                        
+01006ea3  xdc_runtime_System_SupportProxy_exit__E                         
+01006ea7  xdc_runtime_System_SupportProxy_putch__E                        
+01006eab  xdc_runtime_System_SupportProxy_ready__E                        
+01006eb1  __aeabi_memcpy                                                  
+01006eb1  __aeabi_memcpy4                                                 
+01006eb1  __aeabi_memcpy8                                                 
+01007179  ADC_count                                                       
+0100717a  Display_count                                                   
+0100717b  Display_defaultParams                                           
+0100717c  PowerCC32XX_config                                              
+01007226  GPIO_pinUpperBound                                              
+01007227  UART2_count                                                     
+01007250  UART2_defaultParams                                             
+01007298  DisplayUart2Min_fxnTable                                        
+010072b8  ADCCC32XX_fxnTable                                              
+010072d4  ADC_config                                                      
+01007304  displayUart2HWAttrs                                             
+01007318  GPIO_config                                                     
+01007328  Display_config                                                  
+01007334  udmaCC3220SHWAttrs                                              
+01007340  ADC_defaultParams                                               
+01007348  UART2_config                                                    
+01007350  UDMACC32XX_config                                               
+01007358  adcCC32XXHWAttrs                                                
+0100736c  heap0                                                           
+01007370  ti_sysbios_knl_Task_Object__PARAMS__C                           
+010073ac  ti_sysbios_family_arm_m3_Hwi_Object__PARAMS__C                  
+010073dc  ti_sysbios_heaps_HeapMem_Module__FXNS__C                        
+01007404  ti_sysbios_gates_GateHwi_Module__FXNS__C                        
+01007428  ti_sysbios_gates_GateMutex_Module__FXNS__C                      
+0100744c  ti_sysbios_heaps_HeapMem_Object__PARAMS__C                      
+01007470  ti_sysbios_knl_Clock_Object__PARAMS__C                          
+01007494  ti_sysbios_knl_Semaphore_Object__PARAMS__C                      
+010074b8  xdc_runtime_Startup_sfxnTab__A                                  
+010074dc  ti_sysbios_family_arm_m3_Hwi_Object__DESC__C                    
+010074fc  ti_sysbios_gates_GateHwi_Object__DESC__C                        
+0100751c  ti_sysbios_gates_GateMutex_Object__DESC__C                      
+0100753c  ti_sysbios_heaps_HeapMem_Object__DESC__C                        
+0100755c  ti_sysbios_knl_Clock_Object__DESC__C                            
+0100757c  ti_sysbios_knl_Queue_Object__DESC__C                            
+0100759c  ti_sysbios_knl_Semaphore_Object__DESC__C                        
+010075bc  ti_sysbios_knl_Task_Object__DESC__C                             
+010075dc  ti_sysbios_gates_GateHwi_Object__PARAMS__C                      
+010075f4  ti_sysbios_gates_GateMutex_Object__PARAMS__C                    
+0100760c  ti_sysbios_knl_Queue_Object__PARAMS__C                          
+01007624  ti_sysbios_knl_Task_hooks__A                                    
+0100763c  xdc_runtime_Startup_sfxnRts__A                                  
+0100764e  ti_sysbios_family_arm_m3_Hwi_Module__id__C                      
+01007650  xdc_runtime_Startup_firstFxns__A                                
+0100765c  ti_sysbios_knl_Idle_funcList__A                                 
+01007664  ti_sysbios_knl_Idle_funcList__C                                 
+0100766c  ti_sysbios_knl_Task_hooks__C                                    
+01007674  xdc_runtime_Startup_firstFxns__C                                
+0100767c  xdc_runtime_Startup_lastFxns__C                                 
+01007684  ti_sysbios_family_arm_m3_Hwi_E_alreadyDefined__C                
+01007688  ti_sysbios_family_arm_m3_Hwi_E_badIntNum__C                     
+0100768c  ti_sysbios_family_arm_m3_Hwi_NUM_INTERRUPTS__C                  
+01007690  ti_sysbios_family_arm_m3_Hwi_Object__count__C                   
+01007694  ti_sysbios_family_arm_m3_Hwi_ccr__C                             
+01007698  ti_sysbios_family_arm_m3_Hwi_excHandlerFunc__C                  
+0100769c  ti_sysbios_family_arm_m3_Hwi_nullIsrFunc__C                     
+010076a0  ti_sysbios_family_arm_m3_Hwi_priGroup__C                        
+010076a4  ti_sysbios_family_arm_m3_Hwi_swiDisable__C                      
+010076a8  ti_sysbios_family_arm_m3_Hwi_swiRestore__C                      
+010076ac  ti_sysbios_family_arm_m3_TaskSupport_stackAlignment__C          
+010076b0  ti_sysbios_family_arm_m3_Timer_E_cannotSupport__C               
+010076b4  ti_sysbios_family_arm_m3_Timer_startupNeeded__C                 
+010076b8  ti_sysbios_gates_GateMutex_Instance_State_sem__O                
+010076bc  ti_sysbios_heaps_HeapMem_E_memory__C                            
+010076c0  ti_sysbios_heaps_HeapMem_Module__gateObj__C                     
+010076c4  ti_sysbios_heaps_HeapMem_Object__count__C                       
+010076c8  ti_sysbios_heaps_HeapMem_primaryHeapBaseAddr__C                 
+010076cc  ti_sysbios_heaps_HeapMem_primaryHeapEndAddr__C                  
+010076d0  ti_sysbios_heaps_HeapMem_reqAlign__C                            
+010076d4  ti_sysbios_knl_Clock_Module_State_clockQ__O                     
+010076d8  ti_sysbios_knl_Clock_tickPeriod__C                              
+010076dc  ti_sysbios_knl_Mailbox_Instance_State_freeQue__O                
+010076e0  ti_sysbios_knl_Mailbox_Object__count__C                         
+010076e4  ti_sysbios_knl_Mailbox_maxTypeAlign__C                          
+010076e8  ti_sysbios_knl_Semaphore_Instance_State_pendQ__O                
+010076ec  ti_sysbios_knl_Swi_Object__count__C                             
+010076f0  ti_sysbios_knl_Task_Module_State_inactiveQ__O                   
+010076f4  ti_sysbios_knl_Task_Object__count__C                            
+010076f8  ti_sysbios_knl_Task_Object__heap__C                             
+010076fc  ti_sysbios_knl_Task_allBlockedFunc__C                           
+01007700  ti_sysbios_knl_Task_defaultStackHeap__C                         
+01007704  ti_sysbios_knl_Task_defaultStackSize__C                         
+01007708  ti_sysbios_knl_Task_numConstructedTasks__C                      
+0100770c  xdc_runtime_Error_E_memory__C                                   
+01007710  xdc_runtime_Error_policyFxn__C                                  
+01007714  xdc_runtime_IGateProvider_Interface__BASE__C                    
+01007718  xdc_runtime_IHeap_Interface__BASE__C                            
+0100771c  xdc_runtime_IModule_Interface__BASE__C                          
+01007720  xdc_runtime_Memory_defaultHeapInstance__C                       
+01007724  xdc_runtime_Startup_execImpl__C                                 
+01007728  xdc_runtime_Startup_maxPasses__C                                
+0100772c  xdc_runtime_Startup_sfxnRts__C                                  
+01007730  xdc_runtime_Startup_sfxnTab__C                                  
+01007734  xdc_runtime_SysCallback_abortFxn__C                             
+01007738  xdc_runtime_SysCallback_exitFxn__C                              
+0100773c  xdc_runtime_SysCallback_putchFxn__C                             
+01007740  xdc_runtime_SysCallback_readyFxn__C                             
+01007744  xdc_runtime_System_Module__gateObj__C                           
+01007748  xdc_runtime_System_abortFxn__C                                  
+0100774c  xdc_runtime_System_exitFxn__C                                   
+01007750  xdc_runtime_System_extendFxn__C                                 
+01007754  xdc_runtime_System_maxAtexitHandlers__C                         
+01007758  ti_sysbios_family_arm_m3_Timer_Module__id__C                    
+0100775a  ti_sysbios_heaps_HeapMem_Module__id__C                          
+0100775c  xdc_runtime_Memory_Module__id__C                                
+0100775e  ti_sysbios_knl_Clock_tickMode__C                                
+0100775f  ti_sysbios_knl_Clock_tickSource__C                              
+01007760  xdc_runtime_Error_policy__C                                     
+01007764  __TI_static_base__                                              
+0100798c  __TI_Handler_Table_Base                                         
+01007998  __TI_Handler_Table_Limit                                        
+010079a8  __TI_CINIT_Base                                                 
+010079c0  __TI_CINIT_Limit                                                
+010079c0  __TI_CINIT_Warm                                                 
+20000000  __start___llvm_prf_bits                                         
+20000000  __start___llvm_prf_cnts                                         
+20000000  __stop___llvm_prf_bits                                          
+20000000  __stop___llvm_prf_cnts                                          
+20000000  ti_sysbios_family_arm_m3_Hwi_ramVectors                         
+20000310  __primary_heap_start__                                          
+20008310  __primary_heap_end__                                            
+20008c00  ti_sysbios_family_arm_m3_Hwi_dispatchTable                      
+20008f10  ti_sysbios_knl_Task_Instance_State_0_stack__A                   
+20009110  uart2CC32XXObjects0                                             
+20009308  PowerCC32XX_contextSave                                         
+20009434  gpioCallbackFunctions                                           
+200094b8  gpioUserArgs                                                    
+2000953c  adcValue1MicroVolt                                              
+200095e8  adcValue1                                                       
+200095fc  displayUart2Object                                              
+20009608  udmaCC3220SObject                                               
+20009610  adcValue0MicroVolt                                              
+20009614  ti_sysbios_knl_Task_Instance_State_0_hookEnv__A                 
+20009618  adcCC32XXObjects                                                
+2000961a  adcValue0                                                       
+2000961c  PowerCC32XX_module                                              
+20009788  parkInfo                                                        
+20009880  gpioPinConfigs                                                  
+20009904  ti_sysbios_knl_Swi_Module_State_0_readyQ__A                     
+20009984  ti_sysbios_knl_Task_Module_State_0_readyQ__A                    
+20009a04  ti_sysbios_knl_Task_Object__table__V                            
+20009a50  ti_sysbios_knl_Task_Module__state__V                            
+20009a94  ti_sysbios_gates_GateMutex_Object__table__V                     
+20009acc  ti_sysbios_family_arm_m3_Hwi_Module__state__V                   
+20009b00  ti_sysbios_family_arm_m3_Timer_Object__table__V                 
+20009b30  ti_sysbios_knl_Swi_Object__table__V                             
+20009b60  ti_sysbios_knl_Clock_Module__state__V                           
+20009b8c  ti_sysbios_BIOS_Module__state__V                                
+20009bb0  xdc_runtime_Error_IgnoreBlock                                   
+20009bd0  ti_sysbios_knl_Swi_Module__state__V                             
+20009bec  ti_sysbios_family_arm_m3_Hwi_Object__table__V                   
+20009c04  ti_sysbios_heaps_HeapMem_Object__table__V                       
+20009c30  ti_sysbios_family_arm_m3_Timer_Module__state__V                 
+20009c4c  ti_sysbios_family_arm_m3_Hwi_Module__root__V                    
+20009c54  ti_sysbios_gates_GateHwi_Module__root__V                        
+20009c5c  ti_sysbios_gates_GateMutex_Module__root__V                      
+20009c64  ti_sysbios_heaps_HeapMem_Module__root__V                        
+20009c6c  ti_sysbios_knl_Clock_Module__root__V                            
+20009c74  ti_sysbios_knl_Queue_Module__root__V                            
+20009c7c  ti_sysbios_knl_Semaphore_Module__root__V                        
+20009c84  ti_sysbios_knl_Task_Module__root__V                             
+20009c8c  xdc_runtime_System_Module_State_0_atexitHandlers__A             
+20009c94  xdc_runtime_Startup_Module__state__V                            
+20009c9c  xdc_runtime_System_Module__state__V                             
+20009ca4  __xdc__init__addr                                               
+20009ca8  _lock                                                           
+20009cac  _unlock                                                         
+20009cb4  ti_sysbios_family_arm_m3_Hwi_Module_State_0_excContext__A       
+20009cb8  ti_sysbios_family_arm_m3_Hwi_Module_State_0_excStack__A         
+20009cbc  ti_sysbios_gates_GateHwi_Object__table__V                       
+20009cc0  ti_sysbios_knl_Task_Module_State_0_idleTask__A                  
+20009cc4  ti_sysbios_family_arm_m3_TimestampProvider_Module__state__V     
+20009cc8  ti_sysbios_rts_ti_ReentSupport_Module__state__V                 
+20009ccc  xdc_runtime_Memory_Module__state__V                             
+20009cd0  ti_sysbios_family_arm_m3_Hwi_Module_State_0_excActive__A        
+2003fc00  __stack                                                         
+20040000  __STACK_END                                                     
+e000e000  ti_sysbios_family_arm_m3_Hwi_nvic                               
+ffffffff  __TI_pprof_out_hndl                                             
+ffffffff  __TI_prof_data_size                                             
+ffffffff  __TI_prof_data_start                                            
+ffffffff  __binit__                                                       
+ffffffff  binit                                                           
+UNDEFED   ITM_flush                                                       
+UNDEFED   ITM_restore                                                     
+UNDEFED   __c_args__                                                      
+UNDEFED   __mpu_init                                                      
+
+[651 symbols]
